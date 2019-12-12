@@ -1,0 +1,18 @@
+Parsing file test/goldens/abp21_sol.txt
+# automata read: 10
+Dead transitions for automaton: done_does_not_follow_send
+('ld1', 'send?', 'ld1')
+Dead transitions for automaton: sender
+Dead transitions for automaton: receiver
+Dead transitions for automaton: deliver_does_not_follow_send
+('ld1', 'send?', 'ld1')
+Dead transitions for automaton: forward_channel
+Dead transitions for automaton: ReceivingClient
+Dead transitions for automaton: safety_monitor
+('sm1', 'send?', 'error')
+('sm0', 'deliver?', 'error')
+('error', 'send?', 'error')
+('error', 'deliver?', 'error')
+Dead transitions for automaton: backward_channel
+Dead transitions for automaton: Timer
+Dead transitions for automaton: SendingClient

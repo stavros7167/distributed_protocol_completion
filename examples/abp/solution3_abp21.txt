@@ -1,0 +1,82 @@
+
+// ENVIRONMENT PROCESSES
+
+include "channels.txt"
+
+forward_channel = channel(p0, p1, p0', p1')
+
+backward_channel = channel(a0, a1, a0', a1')
+
+include "client_sending.txt"
+
+include "client_receiving.txt"
+
+include "timer.txt"
+
+
+// PROCESSES COMPLETED BY SYNTHESIS
+
+process sender_solution3 {
+  inputs [send, a0', a1', timeout]
+  outputs [done, p0, p1]
+  initial s0
+
+  s0 send? s1
+  s0 a1'? s0		// completed 9
+  s0 timeout? s0	// completed 10
+
+  s1 p0! s2
+
+  s2 a0'? s3
+  s2 timeout? s1	// completed 4
+  s2 a1'? s1		// completed 5
+
+  s3 done! s4
+
+  s4 send? s5
+  s4 timeout? s4	// completed 7
+  s4 a0'? s4		// completed 8
+
+  s5 p1! s6
+
+  s6 a1'? s7
+  s6 a0'? s6		// completed 1
+  s6 timeout? s5	// completed 2
+
+  s7 done! s0
+}
+
+
+process receiver_solution3 {
+  inputs [p0', p1']
+  outputs [deliver, a0, a1]
+  initial r0
+
+  r0 p0'? r1
+  r0 p1'? r5		// completed 6
+
+  r1 deliver! r2
+
+  r2 a0! r3
+
+  r3 p1'? r4
+  r3 p0'? r2		// completed 3
+
+  r4 deliver! r5
+
+  r5 a1! r0
+}
+
+
+// PROPERTIES
+
+include "safety_monitor.txt"
+
+include "liveness1.txt"  // [](send -> <> deliver)
+
+include "liveness3.txt"  // [](send -> <> done)
+
+include "infinitely_often_send_input_complete.txt"
+
+strong_non_blocking [send, deliver, done, timeout, p0, p1, a0, a1, p0', p1', a0', a1']
+

@@ -1,0 +1,8 @@
+Parsing file test/goldens/abp26_output_states_decl_correct.txt
+# automata read: 10
+SOLUTION #1 FOUND:
+** Solution 1 **
+('receiver', 'r0', "p1'?", 'r5')
+('receiver', 'r3', "p0'?", 'r2')
+{'candidate transitions': 28, 'iterations': 11}
+Search finished.

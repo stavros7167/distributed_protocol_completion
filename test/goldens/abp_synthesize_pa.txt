@@ -1,0 +1,40 @@
+Parsing file examples/abp.txt
+# automata read: 8
+SOLUTION #1 FOUND:
+** Solution 1 **
+('receiver', 'q0', "p1'?", 'q5')
+('receiver', 'q3', "p0'?", 'q2')
+('sender', 'q2', "a1'?", 'q1')
+('sender', 'q2', 'timeout?', 'q1')
+('sender', 'q5', "a0'?", 'q5')
+('sender', 'q5', 'timeout?', 'q4')
+{'candidate transitions': 84, 'iterations': 42}
+When one solution is requested, and one is found, this prints the automata. Otherwise ignore this.
+process receiver {
+  inputs [p0', p1']
+  outputs [deliver, a0, a1]
+  initial q0
+  q0 p0'? q1
+  q0 p1'? q5
+  q1 deliver! q2
+  q2 a0! q3
+  q3 p0'? q2
+  q3 p1'? q4
+  q4 deliver! q5
+  q5 a1! q0
+}
+process sender {
+  inputs [send, a0', a1', timeout]
+  outputs [p0, p1]
+  initial q0
+  q0 send? q1
+  q1 p0! q2
+  q2 a1'? q1
+  q2 a0'? q3
+  q2 timeout? q1
+  q3 send? q4
+  q4 p1! q5
+  q5 a1'? q0
+  q5 a0'? q5
+  q5 timeout? q4
+}

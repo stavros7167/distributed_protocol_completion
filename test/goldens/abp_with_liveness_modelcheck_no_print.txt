@@ -1,0 +1,5 @@
+Parsing file examples/abp_with_liveness.txt
+# automata read: 6
+# of deadlocks: 0
+There are no safety violations.
+There are liveness violations

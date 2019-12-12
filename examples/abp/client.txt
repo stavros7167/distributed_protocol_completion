@@ -1,0 +1,11 @@
+
+environment client {
+  inputs [deliver]
+  outputs [send, timeout]
+  initial q0
+  q0 send! q0
+  q0 deliver? q0 strong_fairness
+  q0 timeout! q0
+}
+
+

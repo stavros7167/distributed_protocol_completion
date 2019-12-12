@@ -1,0 +1,20 @@
+include "liveness1.txt"
+
+include "infinitely_often_send_input_complete.txt"
+
+include "channels.txt"
+
+forward_channel = channel(p0, p1, p0', p1')
+
+backward_channel = channel(a0, a1, a0', a1')
+
+include "safety_monitor.txt"
+
+include "client.txt"
+
+include "sender_solution2.txt"
+
+include "receiver_solution2.txt"
+
+strong_non_blocking [timeout, p0, p1, a0, a1, p0', p1', a0', a1']
+

@@ -1,0 +1,10 @@
+ABP4
+SOLUTION FOUND:
+('abpsender', 'q7', 'timeout?', 'q2')
+('abpsender', 'q9', 'timeout?', 'q4')
+('abpsender', 'q11', 'timeout?', 'q4')
+('abpsender', 'q10', 'timeout?', 'q6')
+time: 0:00:10.888969
+candidate transitions: 240
+iterations: 59
+{'ABP4': datetime.timedelta(0, 10, 888969), 'candidate transitions': 240, 'iterations': 59}

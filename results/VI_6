@@ -1,0 +1,10 @@
+VI
+SOLUTION FOUND:
+('directory', 'q7', "wb_c2_dir'?", 'q8')
+('directory', 'q14', "wb_c1_dir'?", 'q15')
+('cache1', 'q7', "inv_dir_c1'?", 'q8')
+('cache2', 'q7', "inv_dir_c2'?", 'q8')
+time: 0:00:18.303426
+candidate transitions: 1170
+iterations: 128
+{'VI': datetime.timedelta(0, 18, 303426), 'candidate transitions': 1170, 'iterations': 128}

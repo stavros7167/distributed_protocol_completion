@@ -1,0 +1,465 @@
+Parsing file examples/abp_with_liveness.txt
+# automata read: 6
+# of deadlocks: 0
+There are no safety violations.
+There are liveness violations
+
+Cycle: (the only monitor included is infinitely_often_send)
+
+Trace to reach cycle
+sender_abp5_solution1_blockingness,receiver_abp5_solution1,client,backward_channel,forward_channel,infinitely_often_send
+s0,r0,q0,q0,q0,q0
+('client', 'q0', 'send!', 'q0')
+('sender_abp5_solution1_blockingness', 's0', 'send?', 's1')
+s1,r0,q0,q0,q0,q0
+('sender_abp5_solution1_blockingness', 's1', 'p0!', 's2')
+('forward_channel', 'q0', 'p0?', 'q1')
+s2,r0,q0,q0,q1,q1
+('forward_channel', 'q1', "p0'!", 'q1')
+('receiver_abp5_solution1', 'r0', "p0'?", 'r1')
+s2,r1,q0,q0,q1,q1
+('receiver_abp5_solution1', 'r1', 'deliver!', 'r2')
+('client', 'q0', 'deliver?', 'q0')
+s2,r2,q0,q0,q1,q1
+('receiver_abp5_solution1', 'r2', 'a0!', 'r3')
+('backward_channel', 'q0', 'a0?', 'q1')
+s2,r3,q0,q1,q1,q1
+('backward_channel', 'q1', "a0'!", 'q0')
+('sender_abp5_solution1_blockingness', 's2', "a0'?", 's3')
+s3,r3,q0,q0,q1,q1
+('forward_channel', 'q1', "p0'!", 'q0')
+('receiver_abp5_solution1', 'r3', "p0'?", 'r2')
+s3,r2,q0,q0,q0,q1
+Trace to repeat cycle
+s3,r2,q0,q0,q0,q1
+('backward_channel', 'q0', 'a0?', 'q0')
+('receiver_abp5_solution1', 'r2', 'a0!', 'r3')
+s3,r3,q0,q0,q0,q1
+('sender_abp5_solution1_blockingness', 's3', 'send?', 's4')
+('client', 'q0', 'send!', 'q0')
+s4,r3,q0,q0,q0,q1
+('forward_channel', 'q0', 'p1?', 'q2')
+('sender_abp5_solution1_blockingness', 's4', 'p1!', 's5')
+s5,r3,q0,q0,q2,q1
+('receiver_abp5_solution1', 'r3', "p1'?", 'r4')
+('forward_channel', 'q2', "p1'!", 'q2')
+s5,r4,q0,q0,q2,q1
+('client', 'q0', 'deliver?', 'q0')
+('receiver_abp5_solution1', 'r4', 'deliver!', 'r5')
+s5,r5,q0,q0,q2,q1
+('backward_channel', 'q0', 'a1?', 'q2')
+('receiver_abp5_solution1', 'r5', 'a1!', 'r0')
+s5,r0,q0,q2,q2,q1
+('sender_abp5_solution1_blockingness', 's5', "a1'?", 's0')
+('backward_channel', 'q2', "a1'!", 'q0')
+s0,r0,q0,q0,q2,q1
+('sender_abp5_solution1_blockingness', 's0', 'send?', 's1')
+('client', 'q0', 'send!', 'q0')
+s1,r0,q0,q0,q2,q1
+('receiver_abp5_solution1', 'r0', "p1'?", 'r0')
+('forward_channel', 'q2', "p1'!", 'q0')
+s1,r0,q0,q0,q0,q1
+('forward_channel', 'q0', 'p0?', 'q1')
+('sender_abp5_solution1_blockingness', 's1', 'p0!', 's2')
+s2,r0,q0,q0,q1,q1
+('receiver_abp5_solution1', 'r0', "p0'?", 'r1')
+('forward_channel', 'q1', "p0'!", 'q1')
+s2,r1,q0,q0,q1,q1
+('client', 'q0', 'deliver?', 'q0')
+('receiver_abp5_solution1', 'r1', 'deliver!', 'r2')
+s2,r2,q0,q0,q1,q1
+('backward_channel', 'q0', 'a0?', 'q1')
+('receiver_abp5_solution1', 'r2', 'a0!', 'r3')
+s2,r3,q0,q1,q1,q1
+('sender_abp5_solution1_blockingness', 's2', 'timeout?', 's1')
+('client', 'q0', 'timeout!', 'q0')
+s1,r3,q0,q1,q1,q1
+('receiver_abp5_solution1', 'r3', "p0'?", 'r2')
+('forward_channel', 'q1', "p0'!", 'q0')
+s1,r2,q0,q1,q0,q1
+('backward_channel', 'q1', 'a0?', 'q1')
+('receiver_abp5_solution1', 'r2', 'a0!', 'r3')
+s1,r3,q0,q1,q0,q1
+('forward_channel', 'q0', 'p0?', 'q0')
+('sender_abp5_solution1_blockingness', 's1', 'p0!', 's2')
+s2,r3,q0,q1,q0,q1
+('sender_abp5_solution1_blockingness', 's2', "a0'?", 's3')
+('backward_channel', 'q1', "a0'!", 'q0')
+s3,r3,q0,q0,q0,q1
+('sender_abp5_solution1_blockingness', 's3', 'send?', 's4')
+('client', 'q0', 'send!', 'q0')
+s4,r3,q0,q0,q0,q1
+('forward_channel', 'q0', 'p1?', 'q2')
+('sender_abp5_solution1_blockingness', 's4', 'p1!', 's5')
+s5,r3,q0,q0,q2,q1
+('receiver_abp5_solution1', 'r3', "p1'?", 'r4')
+('forward_channel', 'q2', "p1'!", 'q0')
+s5,r4,q0,q0,q0,q1
+('client', 'q0', 'deliver?', 'q0')
+('receiver_abp5_solution1', 'r4', 'deliver!', 'r5')
+s5,r5,q0,q0,q0,q1
+('backward_channel', 'q0', 'a1?', 'q2')
+('receiver_abp5_solution1', 'r5', 'a1!', 'r0')
+s5,r0,q0,q2,q0,q1
+('sender_abp5_solution1_blockingness', 's5', "a1'?", 's0')
+('backward_channel', 'q2', "a1'!", 'q0')
+s0,r0,q0,q0,q0,q1
+('sender_abp5_solution1_blockingness', 's0', 'send?', 's1')
+('client', 'q0', 'send!', 'q0')
+s1,r0,q0,q0,q0,q1
+('forward_channel', 'q0', 'p0?', 'q1')
+('sender_abp5_solution1_blockingness', 's1', 'p0!', 's2')
+s2,r0,q0,q0,q1,q1
+('receiver_abp5_solution1', 'r0', "p0'?", 'r1')
+('forward_channel', 'q1', "p0'!", 'q1')
+s2,r1,q0,q0,q1,q1
+('client', 'q0', 'deliver?', 'q0')
+('receiver_abp5_solution1', 'r1', 'deliver!', 'r2')
+s2,r2,q0,q0,q1,q1
+('backward_channel', 'q0', 'a0?', 'q1')
+('receiver_abp5_solution1', 'r2', 'a0!', 'r3')
+s2,r3,q0,q1,q1,q1
+('sender_abp5_solution1_blockingness', 's2', "a0'?", 's3')
+('backward_channel', 'q1', "a0'!", 'q0')
+s3,r3,q0,q0,q1,q1
+('receiver_abp5_solution1', 'r3', "p0'?", 'r2')
+('forward_channel', 'q1', "p0'!", 'q0')
+s3,r2,q0,q0,q0,q1
+
+Cycle: (the only monitor included is infinitely_often_send)
+
+Trace to reach cycle
+sender_abp5_solution1_blockingness,receiver_abp5_solution1,client,backward_channel,forward_channel,infinitely_often_send
+s0,r0,q0,q0,q0,q0
+('client', 'q0', 'send!', 'q0')
+('sender_abp5_solution1_blockingness', 's0', 'send?', 's1')
+s1,r0,q0,q0,q0,q0
+('sender_abp5_solution1_blockingness', 's1', 'p0!', 's2')
+('forward_channel', 'q0', 'p0?', 'q1')
+s2,r0,q0,q0,q1,q1
+('forward_channel', 'q1', "p0'!", 'q0')
+('receiver_abp5_solution1', 'r0', "p0'?", 'r1')
+s2,r1,q0,q0,q0,q1
+('receiver_abp5_solution1', 'r1', 'deliver!', 'r2')
+('client', 'q0', 'deliver?', 'q0')
+s2,r2,q0,q0,q0,q1
+('receiver_abp5_solution1', 'r2', 'a0!', 'r3')
+('backward_channel', 'q0', 'a0?', 'q1')
+s2,r3,q0,q1,q0,q1
+('backward_channel', 'q1', "a0'!", 'q0')
+('sender_abp5_solution1_blockingness', 's2', "a0'?", 's3')
+s3,r3,q0,q0,q0,q1
+('client', 'q0', 'send!', 'q0')
+('sender_abp5_solution1_blockingness', 's3', 'send?', 's4')
+s4,r3,q0,q0,q0,q1
+('sender_abp5_solution1_blockingness', 's4', 'p1!', 's5')
+('forward_channel', 'q0', 'p1?', 'q2')
+s5,r3,q0,q0,q2,q1
+('forward_channel', 'q2', "p1'!", 'q0')
+('receiver_abp5_solution1', 'r3', "p1'?", 'r4')
+s5,r4,q0,q0,q0,q1
+('receiver_abp5_solution1', 'r4', 'deliver!', 'r5')
+('client', 'q0', 'deliver?', 'q0')
+s5,r5,q0,q0,q0,q1
+('receiver_abp5_solution1', 'r5', 'a1!', 'r0')
+('backward_channel', 'q0', 'a1?', 'q0')
+s5,r0,q0,q0,q0,q1
+Trace to repeat cycle
+s5,r0,q0,q0,q0,q1
+('sender_abp5_solution1_blockingness', 's5', 'timeout?', 's4')
+('client', 'q0', 'timeout!', 'q0')
+s4,r0,q0,q0,q0,q1
+('forward_channel', 'q0', 'p1?', 'q2')
+('sender_abp5_solution1_blockingness', 's4', 'p1!', 's5')
+s5,r0,q0,q0,q2,q1
+('receiver_abp5_solution1', 'r0', "p1'?", 'r0')
+('forward_channel', 'q2', "p1'!", 'q0')
+s5,r0,q0,q0,q0,q1
+
+Cycle: (the only monitor included is infinitely_often_send)
+
+Trace to reach cycle
+sender_abp5_solution1_blockingness,receiver_abp5_solution1,client,backward_channel,forward_channel,infinitely_often_send
+s0,r0,q0,q0,q0,q0
+('client', 'q0', 'send!', 'q0')
+('sender_abp5_solution1_blockingness', 's0', 'send?', 's1')
+s1,r0,q0,q0,q0,q0
+('sender_abp5_solution1_blockingness', 's1', 'p0!', 's2')
+('forward_channel', 'q0', 'p0?', 'q1')
+s2,r0,q0,q0,q1,q1
+('forward_channel', 'q1', "p0'!", 'q0')
+('receiver_abp5_solution1', 'r0', "p0'?", 'r1')
+s2,r1,q0,q0,q0,q1
+('receiver_abp5_solution1', 'r1', 'deliver!', 'r2')
+('client', 'q0', 'deliver?', 'q0')
+s2,r2,q0,q0,q0,q1
+('receiver_abp5_solution1', 'r2', 'a0!', 'r3')
+('backward_channel', 'q0', 'a0?', 'q1')
+s2,r3,q0,q1,q0,q1
+('backward_channel', 'q1', "a0'!", 'q1')
+('sender_abp5_solution1_blockingness', 's2', "a0'?", 's3')
+s3,r3,q0,q1,q0,q1
+('backward_channel', 'q1', "a0'!", 'q0')
+('sender_abp5_solution1_blockingness', 's3', "a0'?", 's6')
+s6,r3,q0,q0,q0,q1
+Trace to repeat cycle
+s6,r3,q0,q0,q0,q1
+('sender_abp5_solution1_blockingness', 's6', 'timeout?', 's6')
+('client', 'q0', 'timeout!', 'q0')
+s6,r3,q0,q0,q0,q1
+
+Cycle: (the only monitor included is infinitely_often_send)
+
+Trace to reach cycle
+sender_abp5_solution1_blockingness,receiver_abp5_solution1,client,backward_channel,forward_channel,infinitely_often_send
+s0,r0,q0,q0,q0,q0
+('client', 'q0', 'send!', 'q0')
+('sender_abp5_solution1_blockingness', 's0', 'send?', 's1')
+s1,r0,q0,q0,q0,q0
+('sender_abp5_solution1_blockingness', 's1', 'p0!', 's2')
+('forward_channel', 'q0', 'p0?', 'q1')
+s2,r0,q0,q0,q1,q1
+('forward_channel', 'q1', "p0'!", 'q1')
+('receiver_abp5_solution1', 'r0', "p0'?", 'r1')
+s2,r1,q0,q0,q1,q1
+('receiver_abp5_solution1', 'r1', 'deliver!', 'r2')
+('client', 'q0', 'deliver?', 'q0')
+s2,r2,q0,q0,q1,q1
+('receiver_abp5_solution1', 'r2', 'a0!', 'r3')
+('backward_channel', 'q0', 'a0?', 'q1')
+s2,r3,q0,q1,q1,q1
+('backward_channel', 'q1', "a0'!", 'q1')
+('sender_abp5_solution1_blockingness', 's2', "a0'?", 's3')
+s3,r3,q0,q1,q1,q1
+('client', 'q0', 'send!', 'q0')
+('sender_abp5_solution1_blockingness', 's3', 'send?', 's4')
+s4,r3,q0,q1,q1,q1
+('forward_channel', 'q1', "p0'!", 'q1')
+('receiver_abp5_solution1', 'r3', "p0'?", 'r2')
+s4,r2,q0,q1,q1,q1
+('sender_abp5_solution1_blockingness', 's4', 'p1!', 's5')
+('forward_channel', 'q1', 'p1?', 'q1')
+s5,r2,q0,q1,q1,q1
+Trace to repeat cycle
+s5,r2,q0,q1,q1,q1
+('sender_abp5_solution1_blockingness', 's5', 'timeout?', 's4')
+('client', 'q0', 'timeout!', 'q0')
+s4,r2,q0,q1,q1,q1
+('forward_channel', 'q1', 'p1?', 'q1')
+('sender_abp5_solution1_blockingness', 's4', 'p1!', 's5')
+s5,r2,q0,q1,q1,q1
+
+Cycle: (the only monitor included is infinitely_often_send)
+
+Trace to reach cycle
+sender_abp5_solution1_blockingness,receiver_abp5_solution1,client,backward_channel,forward_channel,infinitely_often_send
+s0,r0,q0,q0,q0,q0
+('client', 'q0', 'send!', 'q0')
+('sender_abp5_solution1_blockingness', 's0', 'send?', 's1')
+s1,r0,q0,q0,q0,q0
+('sender_abp5_solution1_blockingness', 's1', 'p0!', 's2')
+('forward_channel', 'q0', 'p0?', 'q1')
+s2,r0,q0,q0,q1,q1
+('forward_channel', 'q1', "p0'!", 'q1')
+('receiver_abp5_solution1', 'r0', "p0'?", 'r1')
+s2,r1,q0,q0,q1,q1
+('receiver_abp5_solution1', 'r1', 'deliver!', 'r2')
+('client', 'q0', 'deliver?', 'q0')
+s2,r2,q0,q0,q1,q1
+('receiver_abp5_solution1', 'r2', 'a0!', 'r3')
+('backward_channel', 'q0', 'a0?', 'q1')
+s2,r3,q0,q1,q1,q1
+('backward_channel', 'q1', "a0'!", 'q1')
+('sender_abp5_solution1_blockingness', 's2', "a0'?", 's3')
+s3,r3,q0,q1,q1,q1
+('client', 'q0', 'send!', 'q0')
+('sender_abp5_solution1_blockingness', 's3', 'send?', 's4')
+s4,r3,q0,q1,q1,q1
+('forward_channel', 'q1', "p0'!", 'q0')
+('receiver_abp5_solution1', 'r3', "p0'?", 'r2')
+s4,r2,q0,q1,q0,q1
+('sender_abp5_solution1_blockingness', 's4', 'p1!', 's5')
+('forward_channel', 'q0', 'p1?', 'q2')
+s5,r2,q0,q1,q2,q1
+('client', 'q0', 'timeout!', 'q0')
+('sender_abp5_solution1_blockingness', 's5', 'timeout?', 's4')
+s4,r2,q0,q1,q2,q1
+Trace to repeat cycle
+s4,r2,q0,q1,q2,q1
+('forward_channel', 'q2', 'p1?', 'q2')
+('sender_abp5_solution1_blockingness', 's4', 'p1!', 's5')
+s5,r2,q0,q1,q2,q1
+('sender_abp5_solution1_blockingness', 's5', 'timeout?', 's4')
+('client', 'q0', 'timeout!', 'q0')
+s4,r2,q0,q1,q2,q1
+
+Cycle: (the only monitor included is infinitely_often_send)
+
+Trace to reach cycle
+sender_abp5_solution1_blockingness,receiver_abp5_solution1,client,backward_channel,forward_channel,infinitely_often_send
+s0,r0,q0,q0,q0,q0
+('client', 'q0', 'send!', 'q0')
+('sender_abp5_solution1_blockingness', 's0', 'send?', 's1')
+s1,r0,q0,q0,q0,q0
+('sender_abp5_solution1_blockingness', 's1', 'p0!', 's2')
+('forward_channel', 'q0', 'p0?', 'q1')
+s2,r0,q0,q0,q1,q1
+('forward_channel', 'q1', "p0'!", 'q0')
+('receiver_abp5_solution1', 'r0', "p0'?", 'r1')
+s2,r1,q0,q0,q0,q1
+('receiver_abp5_solution1', 'r1', 'deliver!', 'r2')
+('client', 'q0', 'deliver?', 'q0')
+s2,r2,q0,q0,q0,q1
+('receiver_abp5_solution1', 'r2', 'a0!', 'r3')
+('backward_channel', 'q0', 'a0?', 'q1')
+s2,r3,q0,q1,q0,q1
+('backward_channel', 'q1', "a0'!", 'q1')
+('sender_abp5_solution1_blockingness', 's2', "a0'?", 's3')
+s3,r3,q0,q1,q0,q1
+('client', 'q0', 'send!', 'q0')
+('sender_abp5_solution1_blockingness', 's3', 'send?', 's4')
+s4,r3,q0,q1,q0,q1
+('sender_abp5_solution1_blockingness', 's4', 'p1!', 's5')
+('forward_channel', 'q0', 'p1?', 'q2')
+s5,r3,q0,q1,q2,q1
+('forward_channel', 'q2', "p1'!", 'q2')
+('receiver_abp5_solution1', 'r3', "p1'?", 'r4')
+s5,r4,q0,q1,q2,q1
+('receiver_abp5_solution1', 'r4', 'deliver!', 'r5')
+('client', 'q0', 'deliver?', 'q0')
+s5,r5,q0,q1,q2,q1
+Trace to repeat cycle
+s5,r5,q0,q1,q2,q1
+('sender_abp5_solution1_blockingness', 's5', 'timeout?', 's4')
+('client', 'q0', 'timeout!', 'q0')
+s4,r5,q0,q1,q2,q1
+('forward_channel', 'q2', 'p1?', 'q2')
+('sender_abp5_solution1_blockingness', 's4', 'p1!', 's5')
+s5,r5,q0,q1,q2,q1
+
+Cycle: (the only monitor included is infinitely_often_send)
+
+Trace to reach cycle
+sender_abp5_solution1_blockingness,receiver_abp5_solution1,client,backward_channel,forward_channel,infinitely_often_send
+s0,r0,q0,q0,q0,q0
+('client', 'q0', 'send!', 'q0')
+('sender_abp5_solution1_blockingness', 's0', 'send?', 's1')
+s1,r0,q0,q0,q0,q0
+('sender_abp5_solution1_blockingness', 's1', 'p0!', 's2')
+('forward_channel', 'q0', 'p0?', 'q1')
+s2,r0,q0,q0,q1,q1
+('forward_channel', 'q1', "p0'!", 'q0')
+('receiver_abp5_solution1', 'r0', "p0'?", 'r1')
+s2,r1,q0,q0,q0,q1
+('receiver_abp5_solution1', 'r1', 'deliver!', 'r2')
+('client', 'q0', 'deliver?', 'q0')
+s2,r2,q0,q0,q0,q1
+('receiver_abp5_solution1', 'r2', 'a0!', 'r3')
+('backward_channel', 'q0', 'a0?', 'q1')
+s2,r3,q0,q1,q0,q1
+('backward_channel', 'q1', "a0'!", 'q1')
+('sender_abp5_solution1_blockingness', 's2', "a0'?", 's3')
+s3,r3,q0,q1,q0,q1
+('client', 'q0', 'send!', 'q0')
+('sender_abp5_solution1_blockingness', 's3', 'send?', 's4')
+s4,r3,q0,q1,q0,q1
+('sender_abp5_solution1_blockingness', 's4', 'p1!', 's5')
+('forward_channel', 'q0', 'p1?', 'q2')
+s5,r3,q0,q1,q2,q1
+('client', 'q0', 'timeout!', 'q0')
+('sender_abp5_solution1_blockingness', 's5', 'timeout?', 's4')
+s4,r3,q0,q1,q2,q1
+('forward_channel', 'q2', "p1'!", 'q0')
+('receiver_abp5_solution1', 'r3', "p1'?", 'r4')
+s4,r4,q0,q1,q0,q1
+('receiver_abp5_solution1', 'r4', 'deliver!', 'r5')
+('client', 'q0', 'deliver?', 'q0')
+s4,r5,q0,q1,q0,q1
+('receiver_abp5_solution1', 'r5', 'a1!', 'r0')
+('backward_channel', 'q1', 'a1?', 'q1')
+s4,r0,q0,q1,q0,q1
+Trace to repeat cycle
+s4,r0,q0,q1,q0,q1
+('forward_channel', 'q0', 'p1?', 'q2')
+('sender_abp5_solution1_blockingness', 's4', 'p1!', 's5')
+s5,r0,q0,q1,q2,q1
+('receiver_abp5_solution1', 'r0', "p1'?", 'r0')
+('forward_channel', 'q2', "p1'!", 'q0')
+s5,r0,q0,q1,q0,q1
+('sender_abp5_solution1_blockingness', 's5', 'timeout?', 's4')
+('client', 'q0', 'timeout!', 'q0')
+s4,r0,q0,q1,q0,q1
+
+Cycle: (the only monitor included is infinitely_often_send)
+
+Trace to reach cycle
+sender_abp5_solution1_blockingness,receiver_abp5_solution1,client,backward_channel,forward_channel,infinitely_often_send
+s0,r0,q0,q0,q0,q0
+('client', 'q0', 'send!', 'q0')
+('sender_abp5_solution1_blockingness', 's0', 'send?', 's1')
+s1,r0,q0,q0,q0,q0
+('sender_abp5_solution1_blockingness', 's1', 'p0!', 's2')
+('forward_channel', 'q0', 'p0?', 'q1')
+s2,r0,q0,q0,q1,q1
+('forward_channel', 'q1', "p0'!", 'q0')
+('receiver_abp5_solution1', 'r0', "p0'?", 'r1')
+s2,r1,q0,q0,q0,q1
+('receiver_abp5_solution1', 'r1', 'deliver!', 'r2')
+('client', 'q0', 'deliver?', 'q0')
+s2,r2,q0,q0,q0,q1
+('receiver_abp5_solution1', 'r2', 'a0!', 'r3')
+('backward_channel', 'q0', 'a0?', 'q1')
+s2,r3,q0,q1,q0,q1
+('backward_channel', 'q1', "a0'!", 'q0')
+('sender_abp5_solution1_blockingness', 's2', "a0'?", 's3')
+s3,r3,q0,q0,q0,q1
+('client', 'q0', 'send!', 'q0')
+('sender_abp5_solution1_blockingness', 's3', 'send?', 's4')
+s4,r3,q0,q0,q0,q1
+('sender_abp5_solution1_blockingness', 's4', 'p1!', 's5')
+('forward_channel', 'q0', 'p1?', 'q2')
+s5,r3,q0,q0,q2,q1
+('forward_channel', 'q2', "p1'!", 'q0')
+('receiver_abp5_solution1', 'r3', "p1'?", 'r4')
+s5,r4,q0,q0,q0,q1
+('receiver_abp5_solution1', 'r4', 'deliver!', 'r5')
+('client', 'q0', 'deliver?', 'q0')
+s5,r5,q0,q0,q0,q1
+('receiver_abp5_solution1', 'r5', 'a1!', 'r0')
+('backward_channel', 'q0', 'a1?', 'q2')
+s5,r0,q0,q2,q0,q1
+('backward_channel', 'q2', "a1'!", 'q2')
+('sender_abp5_solution1_blockingness', 's5', "a1'?", 's0')
+s0,r0,q0,q2,q0,q1
+('client', 'q0', 'send!', 'q0')
+('sender_abp5_solution1_blockingness', 's0', 'send?', 's1')
+s1,r0,q0,q2,q0,q1
+('sender_abp5_solution1_blockingness', 's1', 'p0!', 's2')
+('forward_channel', 'q0', 'p0?', 'q1')
+s2,r0,q0,q2,q1,q1
+('client', 'q0', 'timeout!', 'q0')
+('sender_abp5_solution1_blockingness', 's2', 'timeout?', 's1')
+s1,r0,q0,q2,q1,q1
+('forward_channel', 'q1', "p0'!", 'q1')
+('receiver_abp5_solution1', 'r0', "p0'?", 'r1')
+s1,r1,q0,q2,q1,q1
+('receiver_abp5_solution1', 'r1', 'deliver!', 'r2')
+('client', 'q0', 'deliver?', 'q0')
+s1,r2,q0,q2,q1,q1
+('receiver_abp5_solution1', 'r2', 'a0!', 'r3')
+('backward_channel', 'q2', 'a0?', 'q2')
+s1,r3,q0,q2,q1,q1
+Trace to repeat cycle
+s1,r3,q0,q2,q1,q1
+('receiver_abp5_solution1', 'r3', "p0'?", 'r2')
+('forward_channel', 'q1', "p0'!", 'q0')
+s1,r2,q0,q2,q0,q1
+('backward_channel', 'q2', 'a0?', 'q2')
+('receiver_abp5_solution1', 'r2', 'a0!', 'r3')
+s1,r3,q0,q2,q0,q1
+('forward_channel', 'q0', 'p0?', 'q1')
+('sender_abp5_solution1_blockingness', 's1', 'p0!', 's2')
+s2,r3,q0,q2,q1,q1
+('sender_abp5_solution1_blockingness', 's2', 'timeout?', 's1')
+('client', 'q0', 'timeout!', 'q0')
+s1,r3,q0,q2,q1,q1

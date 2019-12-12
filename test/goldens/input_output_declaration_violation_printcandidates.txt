@@ -1,0 +1,4 @@
+Parsing file test/input_output_declaration_violation.txt
+In automaton e1, message a used in input transition but not declared in inputs.
+In automaton e1, message b used in output transition but not declared in outputs.
+Error interpreting model.

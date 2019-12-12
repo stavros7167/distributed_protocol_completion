@@ -1,0 +1,22 @@
+include "liveness1.txt"
+
+include "channels.txt"
+
+forward_channel = channel(p0, p1, p0', p1')
+
+backward_channel = channel(a0, a1, a0', a1')
+
+include "safety_monitor.txt"
+
+include "client.txt"
+
+include "incomplete_sender2.txt"
+// include "incomplete_sender3.txt"
+// include "incomplete_sender4.txt"
+// include "incomplete_sender5.txt"
+// include "incomplete_sender6.txt"
+
+include "incomplete_receiver.txt"
+
+strong_non_blocking [send, timeout, p0, p1, a0, a1, p0', p1', a0', a1']
+

@@ -1,0 +1,9 @@
+
+environment ReceivingClient {
+  inputs [deliver]
+  outputs []
+  initial rc0
+  rc0 deliver? rc0 strong_fairness
+}
+
+

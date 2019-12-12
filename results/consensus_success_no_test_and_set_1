@@ -1,0 +1,6 @@
+consensus_no_test_and_set
+NO SOLUTION FOUND
+time: 0:00:09.907547
+candidate transitions: 88
+iterations: 156
+{'consensus_no_test_and_set': datetime.timedelta(0, 9, 907547), 'candidate transitions': 88, 'iterations': 156}

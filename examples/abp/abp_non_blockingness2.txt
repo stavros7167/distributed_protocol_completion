@@ -1,0 +1,53 @@
+include "liveness1.txt"
+
+include "channels.txt"
+
+forward_channel = channel(p0, p1, p0', p1')
+
+backward_channel = channel(a0, a1, a0', a1')
+
+include "safety_monitor.txt"
+
+
+environment client {
+  inputs [deliver]
+  outputs [timeout, send]
+  initial q0
+  q0 send! q0
+  q0 deliver? q0 strong_fairness
+  q0 timeout! q0
+}
+
+process sender {
+  inputs [a0', a1', timeout]
+  outputs [p0, p1, send]
+  initial q0
+  q0 send? q1
+  q1 p0! q2
+  q2 a0'? q3
+  q3 send? q4
+  q4 p1! q5
+  q5 a1'? q0
+  // missing the following four transitions
+  // q5 a0'? q4
+  // q5 timeout? q4
+  // q2 a1'? q1
+  // q2 timeout? q1
+}
+
+process receiver {
+  inputs [p0', p1']
+  outputs [deliver, a0, a1]
+  initial q0
+  q0 p0'? q1
+  q1 deliver! q2
+  q2 a0! q3
+  q3 p1'? q4
+  q4 deliver! q5
+  q5 a1! q0
+  // missing the following two transitions
+  // q3 p0'? q2
+  // q0 p1'? q5
+}
+
+strong_non_blocking [p0, p1, a0, a1, p0', p1', a0', a1']

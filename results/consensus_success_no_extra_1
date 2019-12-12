@@ -1,0 +1,6 @@
+consensus_success_no_extra
+NO SOLUTION FOUND
+time: 0:00:12.519421
+candidate transitions: 112
+iterations: 162
+{'consensus_success_no_extra': datetime.timedelta(0, 12, 519421), 'candidate transitions': 112, 'iterations': 162}

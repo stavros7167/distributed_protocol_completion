@@ -1,0 +1,8 @@
+Files labeled as Benchmark-name_[0-9]*
+correspond to one run for benchmark benchmark-name.
+
+results_[commit-id] were generared using one full run of run_benchmarks.py in the corresponding commit.
+
+The rest of the files were generaeted using the following:
+
+for b in ABP1 ABP2 ABP4 ABPColors1 ABPColors2 ABPColors4; do for i in `seq 1 10`; do ./run_benchmarks.py $b >| runs/run_${b}_$i; done; done

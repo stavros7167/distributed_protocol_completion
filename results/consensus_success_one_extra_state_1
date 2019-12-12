@@ -1,0 +1,14 @@
+consensus_success_one_extra_state
+SOLUTION FOUND:
+('p1', 'q2', 'p1_test_and_set_1?', 'q8')
+('p2', 'q2', 'p2_test_and_set_1?', 'q8')
+('p1', 'q6', 'p1_test_and_set_1?', 'q8')
+('p2', 'q6', 'p2_test_and_set_1?', 'q8')
+('p1', 'q8', 'p2_read_0?', 'q3')
+('p2', 'q8', 'p1_read_0?', 'q3')
+('p1', 'q8', 'p2_read_1?', 'q7')
+('p2', 'q8', 'p1_read_1?', 'q7')
+time: 0:00:20.363756
+candidate transitions: 216
+iterations: 163
+{'consensus_success_one_extra_state': datetime.timedelta(0, 20, 363756), 'candidate transitions': 216, 'iterations': 163}

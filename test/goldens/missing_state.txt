@@ -1,0 +1,3 @@
+Parsing file test/missing_state.txt
+In automaton E, state e1 is used but not declared in states.
+Error interpreting model.

@@ -1,0 +1,5 @@
+Parsing file test/input_enabled_spec_correct.txt
+# automata read: 2
+# of deadlocks: 1
+There are no safety violations.
+There are no liveness violations

@@ -1,0 +1,111 @@
+// testing the limits of our completion tool with input enabledness
+// we start from abp21_with_input_enabledness.txt
+// and keep removing transitions one by one.
+
+
+// ENVIRONMENT PROCESSES
+
+include "channels.txt"
+
+forward_channel = channel(p0, p1, p0', p1')
+
+backward_channel = channel(a0, a1, a0', a1')
+
+include "client_sending.txt"
+
+include "client_receiving.txt"
+
+include "timer.txt"
+
+
+// INCOMPLETE PROCESSES FOR SYNTHESIS
+
+
+// The following is incomplete_sender7 with an additional input_enabled command.
+
+process sender {
+  inputs [send, a0', a1', timeout]
+  input_enabled [send, a0', a1', timeout]
+  outputs [done, p0, p1]
+  initial s0
+
+  // s0 is an "input state": it can receive all 4 inputs of the sender
+  s0 send? s1
+  // s0 a0'? s0 // adding or removing this self-loop does not seem to affect
+		// correctness of abp15.txt
+  // s0 a1'? s0		// incomplete 1
+  // s0 timeout? s0	// incomplete 2
+
+  // s1 is an "output state": it does not need to receive any inputs
+  s1 p0! s2
+
+  // s2 is an "input state": it can receive a0', a1', and timeout
+  // although it cannot receive "send", this is fine, since "send" is not
+  // in the list of messages for which strong non-blockingness is required
+  s2 a0'? s3
+  // s2 a1'? s2		// incomplete 3
+  // s2 timeout? s1 	// incomplete 4
+
+  // s3 is an "output state":
+  s3 done! s4
+
+  // s4 is an "input state": it can receive all 4 inputs of the sender
+  s4 send? s5
+  // s4 a0'? s4		// incomplete 5
+  // s4 a1'? s4 // adding or removing this self-loop does not seem to affect
+		// correctness of abp15.txt
+  // s4 timeout? s4	// incomplete 6
+
+  // s5 is an "output state"
+  s5 p1! s6
+
+  // s6 is an "input state"
+  s6 a1'? s7
+  // s6 a0'? s6		// incomplete 7
+  // s6 timeout? s5	// incomplete 8 
+
+  // s7 is an "output state":
+  s7 done! s0
+}
+
+// This is incomplete_receiver.txt
+
+process receiver {
+  states [r0, r1, r2, r3, r4, r5]
+  inputs [p0', p1']
+  input_enabled [p0', p1']
+  outputs [deliver, a0, a1]
+  initial r0
+
+  // r0 is an "input state": it can receive both inputs p0' and p1'
+  r0 p0'? r1
+
+  // r1 is an "output state"
+  r1 deliver! r2
+
+  // r2 is an "output state"
+  // r2 a0! r3
+
+  // r3 is an "input state": it can receive both inputs p0' and p1'
+  // r3 p1'? r4
+
+  // r4 is an "output state"
+  // r4 deliver! r5
+
+  // r5 is an "output state"
+  // r5 a1! r0
+}
+
+
+// PROPERTIES
+
+include "safety_monitor.txt"
+
+include "liveness1.txt"  // [](send -> <> deliver)
+
+include "liveness3.txt"  // [](send -> <> done)
+
+include "infinitely_often_send_input_complete.txt"
+
+// strong_non_blocking [send, deliver, done, timeout, p0, p1, a0, a1, p0', p1', a0', a1']
+

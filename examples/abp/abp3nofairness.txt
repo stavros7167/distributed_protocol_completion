@@ -1,0 +1,84 @@
+// include "liveness.txt"
+
+
+// The following accepts executions where a send is not eventually followed
+// by a deliver
+liveness deliver_does_not_follow_send {
+  inputs [send, deliver, timeout, p0, p1, a0, a1, p0', p1', a0', a1']
+  outputs []
+  initial ld0
+  accepting [ld1]
+
+  ld0 send? ld0
+  ld0 deliver? ld0
+  ld0 send? ld1
+  ld0 timeout? ld0
+  ld0 p0? ld0
+  ld0 p1? ld0
+  ld0 a0? ld0
+  ld0 a1? ld0
+  ld0 p0'? ld0
+  ld0 p1'? ld0
+  ld0 a0'? ld0
+  ld0 a1'? ld0
+
+  ld1 send? ld1
+  ld1 deliver? ld2
+  ld1 timeout? ld1
+  ld1 p0? ld1
+  ld1 p1? ld1
+  ld1 a0? ld1
+  ld1 a1? ld1
+  ld1 p0'? ld1
+  ld1 p1'? ld1
+  ld1 a0'? ld1
+  ld1 a1'? ld1
+
+  ld2 send? ld2
+  ld2 deliver? ld2
+  ld2 timeout? ld2
+  ld2 p0? ld2
+  ld2 p1? ld2
+  ld2 a0? ld2
+  ld2 a1? ld2
+  ld2 p0'? ld2
+  ld2 p1'? ld2
+  ld2 a0'? ld2
+  ld2 a1'? ld2
+}
+
+environment channel(in1, in2, out1, out2) {
+  inputs [in1, in2]
+  outputs [out1, out2]
+  initial c0
+  // receive
+  c0 in1? c1
+  c0 in2? c2
+  // deliver
+  c1 out1! c0
+  c2 out2! c0
+  // loss
+  c0 in1? c0
+  c0 in2? c0
+  // overflow
+  c1 in1? c1
+  c1 in2? c1
+  c2 in1? c2
+  c2 in2? c2
+  // duplicate
+  c1 out1! c1
+  c2 out2! c2
+}
+
+forward_channel = channel(p0, p1, p0', p1')
+
+backward_channel = channel(a0, a1, a0', a1')
+
+// include "safety_monitor.txt"
+
+include "client.txt"
+
+include "manual_sender.txt"
+
+include "manual_receiver.txt"
+

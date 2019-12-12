@@ -1,0 +1,133 @@
+ABP1
+SOLUTION FOUND:
+('abpsender', 'q2', "a1'?", 'q1')
+('abpsender', 'q2', 'timeout?', 'q1')
+('abpsender', 'q5', "a0'?", 'q5')
+('abpsender', 'q5', 'timeout?', 'q4')
+('abpreceiver', 'waiting-for-1', "p0'?", 'q2')
+('abpreceiver', 'waiting-for-0', "p1'?", 'q5')
+time: 0:00:03.982067
+candidate transitions: 36
+iterations: 34
+ABP2
+SOLUTION FOUND:
+('abpsender', 'q4', 'timeout?', 'q1')
+('abpsender', 'q4', "a1'?", 'q3')
+('abpsender', 'q9', 'timeout?', 'q7')
+('abpsender', 'q9', "a0'?", 'q6')
+('abpreceiver', 'waiting-for-1', "p0'?", 'q2')
+('abpreceiver', 'waiting-for-0', "p1'?", 'q5')
+time: 0:00:12.109494
+candidate transitions: 72
+iterations: 51
+ABP4
+SOLUTION FOUND:
+('abpsender', 'q7', 'timeout?', 'q1')
+('abpsender', 'q9', 'timeout?', 'q4')
+('abpsender', 'q11', 'timeout?', 'q8')
+('abpsender', 'q10', 'timeout?', 'q7')
+time: 0:00:10.586187
+candidate transitions: 96
+iterations: 27
+ABPColors1
+SOLUTION FOUND:
+('abpsender', 'q2', 'timeout?', 'q1')
+('abpsender', 'q2', "a1'?", 'q2')
+('abpsender', 'q5', "a0'?", 'q4')
+('abpsender', 'q5', 'timeout?', 'q4')
+('abpsender', 'q7', "a0'?", 'q7')
+('abpsender', 'q7', 'timeout?', 'q6')
+('abpsender', 'q9', "a1'?", 'q9')
+('abpsender', 'q9', 'timeout?', 'q8')
+('abpreceiver', 'waiting-for-1', "p0blue'?", 'q9')
+('abpreceiver', 'waiting-for-1', "p0red'?", 'q9')
+('abpreceiver', 'waiting-for-0', "p1blue'?", 'q5')
+('abpreceiver', 'waiting-for-0', "p1red'?", 'q7')
+time: 0:00:58.348633
+candidate transitions: 120
+iterations: 93
+ABPColors2
+SOLUTION FOUND:
+('abpsender', 'q4', "a1'?", 'q3')
+('abpsender', 'q4', 'timeout?', 'q2')
+('abpsender', 'q15', "a1'?", 'q14')
+('abpsender', 'q15', 'timeout?', 'q14')
+('abpsender', 'q17', "a0'?", 'q7')
+('abpsender', 'q17', 'timeout?', 'q6')
+('abpsender', 'q11', "a0'?", 'q11')
+('abpsender', 'q11', 'timeout?', 'q10')
+('abpreceiver', 'waiting-for-1', "p0blue'?", 'q2')
+('abpreceiver', 'waiting-for-1', "p0red'?", 'q2')
+('abpreceiver', 'waiting-for-0', "p1blue'?", 'q7')
+('abpreceiver', 'waiting-for-0', "p1red'?", 'q7')
+time: 0:03:28.802857
+candidate transitions: 256
+iterations: 169
+ABPColors4
+SOLUTION FOUND:
+('abpsender', 'q20', 'timeout?', 'q13')
+('abpsender', 'q21', 'timeout?', 'q4')
+('abpsender', 'q7', 'timeout?', 'q1')
+('abpsender', 'q9', 'timeout?', 'q4')
+('abpsender', 'q16', 'timeout?', 'q11')
+('abpsender', 'q10', 'timeout?', 'q7')
+('abpsender', 'q19', 'timeout?', 'q16')
+('abpsender', 'q18', 'timeout?', 'q14')
+time: 0:03:21.942408
+candidate transitions: 352
+iterations: 96
+VI
+SOLUTION FOUND:
+('directory', 'q7', "wb_c2_dir'?", 'q8')
+('directory', 'q14', "wb_c1_dir'?", 'q15')
+('cache1', 'q7', "inv_dir_c1'?", 'q8')
+('cache2', 'q7', "inv_dir_c2'?", 'q8')
+time: 0:00:17.706554
+candidate transitions: 1170
+iterations: 135
+VIData
+SOLUTION FOUND:
+('directory', 'q20', "wb_c1_dir_d1'?", 'q26')
+('directory', 'q20', "wb_c1_dir_d0'?", 'q16')
+('directory', 'q7', "wb_c2_dir_d0'?", 'q1')
+('directory', 'q7', "wb_c2_dir_d1'?", 'q14')
+('cache1', 'q7', "inv_dir_c1'?", 'q15')
+('cache2', 'q7', "inv_dir_c2'?", 'q15')
+('cache1', 'q14', "inv_dir_c1'?", 'q15')
+('cache2', 'q14', "inv_dir_c2'?", 'q15')
+time: 0:05:04.577987
+candidate transitions: 4224
+iterations: 430
+consensus_fail
+SOLUTION FOUND:
+('p1', 'q2', 'p1_test_and_set_0?', 'q4')
+('p2', 'q2', 'p2_test_and_set_0?', 'q4')
+('p1', 'q7', 'p2_read_1?', 'q3')
+('p2', 'q7', 'p1_read_1?', 'q3')
+time: 0:00:00.260608
+candidate transitions: 264
+iterations: 5
+consensus_success_no_extra
+NO SOLUTION FOUND
+time: 0:00:10.099506
+candidate transitions: 112
+iterations: 141
+consensus_success_one_extra_state
+SOLUTION FOUND:
+('p1', 'q2', 'p1_test_and_set_1?', 'q8')
+('p2', 'q2', 'p2_test_and_set_1?', 'q8')
+('p1', 'q6', 'p1_test_and_set_1?', 'q2')
+('p2', 'q6', 'p2_test_and_set_1?', 'q2')
+('p1', 'q8', 'p2_read_0?', 'q3')
+('p2', 'q8', 'p1_read_0?', 'q3')
+('p1', 'q8', 'p2_read_1?', 'q7')
+('p2', 'q8', 'p1_read_1?', 'q7')
+time: 0:00:22.508075
+candidate transitions: 216
+iterations: 172
+consensus_no_test_and_set
+NO SOLUTION FOUND
+time: 0:00:10.207791
+candidate transitions: 88
+iterations: 159
+{'consensus_no_test_and_set': datetime.timedelta(0, 10, 207791), 'candidate transitions': 88, 'iterations': 159}

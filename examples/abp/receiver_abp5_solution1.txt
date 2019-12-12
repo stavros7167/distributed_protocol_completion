@@ -1,0 +1,19 @@
+
+// This is one out of 4 solutions found by synthesizer on abp5.txt:
+
+process receiver_abp5_solution1 {
+  inputs [p0', p1']
+  outputs [deliver, a0, a1]
+  initial r0
+  r0 p0'? r1
+  r1 deliver! r2
+  r2 a0! r3
+  r3 p1'? r4
+  r4 deliver! r5
+  r5 a1! r0
+  // transitions added by synthesizer:
+  r0 p1'? r0
+  r3 p0'? r2
+}
+
+

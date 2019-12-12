@@ -1,0 +1,3 @@
+Parsing file test/input_enabled_spec_with_output_channel.txt
+In automaton P, message c used in input enabled spec but not is not an input of the automaton.
+Error interpreting model.

@@ -1,0 +1,14 @@
+ABPColors4
+SOLUTION FOUND:
+('abpsender', 'q20', 'timeout?', 'q13')
+('abpsender', 'q21', 'timeout?', 'q5')
+('abpsender', 'q7', 'timeout?', 'q2')
+('abpsender', 'q9', 'timeout?', 'q21')
+('abpsender', 'q16', 'timeout?', 'q11')
+('abpsender', 'q10', 'timeout?', 'q2')
+('abpsender', 'q19', 'timeout?', 'q15')
+('abpsender', 'q18', 'timeout?', 'q13')
+time: 0:06:05.637550
+candidate transitions: 1012
+iterations: 293
+{'ABPColors4': datetime.timedelta(0, 365, 637550), 'candidate transitions': 1012, 'iterations': 293}

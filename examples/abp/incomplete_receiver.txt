@@ -1,0 +1,27 @@
+
+process receiver {
+  inputs [p0', p1']
+  outputs [deliver, a0, a1]
+  initial r0
+
+  // r0 is an "input state": it can receive both inputs p0' and p1'
+  r0 p0'? r1
+  // r0 p1'? r5		// incomplete 1
+
+  // r1 is an "output state"
+  r1 deliver! r2
+
+  // r2 is an "output state"
+  r2 a0! r3
+
+  // r3 is an "input state": it can receive both inputs p0' and p1'
+  r3 p1'? r4
+  // r3 p0'? r2		// incomplete 2
+
+  // r4 is an "output state"
+  r4 deliver! r5
+
+  // r5 is an "output state"
+  r5 a1! r0
+}
+

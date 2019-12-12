@@ -1,0 +1,21 @@
+
+// this is the solution obtained by
+// python ../../tool.py synthesize -snb abp13.txt
+// with incomplete_receiver.txt
+
+process receiver {
+  inputs [p0', p1']
+  outputs [deliver, a0, a1]
+  initial r0
+  r0 p0'? r1
+  r1 deliver! r2
+  r2 a0! r3
+  r3 p1'? r4
+  r4 deliver! r5
+  r5 a1! r0
+  // transitions added by tool:
+  r0 p1'? r0
+  r3 p0'? r2
+}
+
+

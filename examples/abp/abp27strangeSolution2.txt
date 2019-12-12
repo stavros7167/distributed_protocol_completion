@@ -1,0 +1,114 @@
+// this solution was obtained by synthesis after removing up to 
+// transition // remove 18 from the sender and including infinitely often send
+// checking to see why it's correct.
+// the interesting part is   s0 send? s4
+// also s1 done! s2
+
+
+// ENVIRONMENT PROCESSES
+
+include "channels.txt"
+
+forward_channel = channel(p0, p1, p0', p1')
+
+backward_channel = channel(a0, a1, a0', a1')
+
+include "client_sending_input_enabled.txt"
+
+include "client_receiving_without_fairness.txt"
+
+include "timer.txt"
+
+
+// SOLUTION
+
+// $ time python ../../tool.py synthesize -s z3 abp27.txt
+// Parsing file abp27.txt
+// # automata read: 12
+// SOLUTION #1 FOUND:
+// ** Solution 1 **
+// {'candidate transitions': 188, 'iterations': 4056}
+// 
+// real    9m20.838s
+// user    8m27.584s
+// sys     0m51.186s
+
+
+process sender {
+  inputs [a0', send, a1', timeout]
+  outputs [done, p0, p1]
+  initial s0
+  s0 a0'? s0
+// ('sender', 's0', "a0'?", 's0')
+  s0 a1'? s0
+// ('sender', 's0', "a1'?", 's0')
+  s0 send? s4
+// ('sender', 's0', 'send?', 's4')
+  s0 timeout? s0
+// ('sender', 's0', 'timeout?', 's0')
+  s1 done! s2
+// ('sender', 's1', 'done!', 's2')
+  s2 a0'? s2
+// ('sender', 's2', "a0'?", 's2')
+  s2 a1'? s5
+// ('sender', 's2', "a1'?", 's5')
+  s2 send? s5
+// ('sender', 's2', 'send?', 's5')
+  s2 timeout? s2
+// ('sender', 's2', 'timeout?', 's2')
+  s3 p0! s4
+// ('sender', 's3', 'p0!', 's4')
+  s4 a0'? s1
+// ('sender', 's4', "a0'?", 's1')
+  s4 a1'? s4
+// ('sender', 's4', "a1'?", 's4')
+  s4 send? s4
+// ('sender', 's4', 'send?', 's4')
+  s4 timeout? s3
+// ('sender', 's4', 'timeout?', 's3')
+  s5 p1! s6
+  s6 a0'? s5
+// ('sender', 's6', "a0'?", 's5')
+  s6 a1'? s7
+// ('sender', 's6', "a1'?", 's7')
+  s6 send? s0
+// ('sender', 's6', 'send?', 's0')
+  s6 timeout? s5
+// ('sender', 's6', 'timeout?', 's5')
+  s7 done! s0
+}
+
+process receiver {
+  inputs [p0', p1']
+  outputs [deliver, a0, a1]
+  initial r0
+  r0 p0'? r1
+  r0 p1'? r5
+// ('receiver', 'r0', "p1'?", 'r5')
+  r1 deliver! r2 strong_fairness
+  r2 a0! r3 strong_fairness
+  r3 p0'? r2
+// ('receiver', 'r3', "p0'?", 'r2')
+  r3 p1'? r4
+  r4 deliver! r5 strong_fairness
+  r5 a1! r0 strong_fairness
+}
+
+
+
+// PROPERTIES
+
+include "safety_monitor.txt"
+
+include "safety_monitor2.txt"
+
+include "liveness1.txt"  // [](send -> <> deliver)
+
+include "liveness3.txt"  // [](send -> <> done)
+
+// in order to satisfy the property below, you have to enable strong fairness
+// on the Sending Client: client_sending_input_enabled.txt
+include "infinitely_often_send_input_complete.txt"
+
+strong_non_blocking [send, deliver, done, timeout, p0, p1, a0, a1, p0', p1', a0', a1']
+

@@ -1,0 +1,14 @@
+process p {
+  inputs [a, b]
+  outputs []
+  initial q0
+  q0 a? q1
+  q0 b? q0
+}
+
+environment e {
+  inputs []
+  outputs [b]
+  initial q0
+  q0 b! q0
+}

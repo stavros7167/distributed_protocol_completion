@@ -1,0 +1,15 @@
+environment E {
+  inputs []
+  outputs [a, b]
+  initial e0
+  e0 a! e0
+  e0 b! e0
+}
+
+process P {
+  states [p0]
+  inputs [a, b]
+  input_enabled [a, b]
+  outputs []
+  initial p0
+}

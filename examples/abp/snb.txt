@@ -1,0 +1,15 @@
+
+safety snb_safety_monitor {
+  inputs [send, timeout, p0, a0', done]
+  outputs []
+  initial sm0
+  accepting [error]
+  sm0 send? sm1
+  sm1 timeout? sm2
+  sm2 p0? sm3
+  sm3 a0'? sm4
+  sm4 timeout? sm5
+  sm5 timeout? sm6
+  sm6 done? error
+}
+

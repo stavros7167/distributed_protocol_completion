@@ -1,0 +1,6 @@
+Parsing file test/abp_snb_output.txt
+# automata read: 10
+SOLUTION #1 FOUND:
+** Solution 1 **
+('receiver', 'r5', 'a1!', 'r0')
+{'candidate transitions': 62, 'iterations': 22}

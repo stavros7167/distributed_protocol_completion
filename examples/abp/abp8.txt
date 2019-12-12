@@ -1,0 +1,15 @@
+
+include "channels.txt"
+
+forward_channel = channel(p0, p1, p0', p1')
+
+backward_channel = channel(a0, a1, a0', a1')
+
+include "client.txt"
+
+include "receiver_abp5_solution1.txt"
+include "sender_abp5_solution1.txt"
+
+// include "infinitely_often_send.txt"
+include "infinitely_often_send_input_complete.txt"
+

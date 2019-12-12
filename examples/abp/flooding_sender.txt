@@ -1,0 +1,16 @@
+
+// This is a "manually" designed sender to check if a "flooding" sender
+// satisfies the requested properties 
+
+// failed to find one such sender
+
+process flooding_sender {
+  inputs [send, a0', a1', timeout]
+  outputs [done, p0, p1]
+  initial s0
+
+  // s0 send? s1 
+  // s1 p0! s2 
+  s0 done! s0
+}
+

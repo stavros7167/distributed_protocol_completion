@@ -1,0 +1,25 @@
+
+
+liveness mon {
+  inputs [a]
+  outputs []
+  initial q0
+  accepting [q1]
+  q0 a? q1
+  q1 a? q1
+}
+
+environment client {
+  inputs []
+  outputs [a]
+  initial q0
+  q0 a! q0
+}
+
+environment client2 {
+  inputs [a]
+  outputs []
+  initial q0
+  q0 a? q0
+}
+

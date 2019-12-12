@@ -1,0 +1,18 @@
+ABPColors1
+SOLUTION FOUND:
+('abpsender', 'q2', 'timeout?', 'q1')
+('abpsender', 'q2', "a1'?", 'q2')
+('abpsender', 'q5', "a0'?", 'q5')
+('abpsender', 'q5', 'timeout?', 'q4')
+('abpsender', 'q7', "a0'?", 'q6')
+('abpsender', 'q7', 'timeout?', 'q6')
+('abpsender', 'q9', "a1'?", 'q8')
+('abpsender', 'q9', 'timeout?', 'q8')
+('abpreceiver', 'waiting-for-1', "p0blue'?", 'q2')
+('abpreceiver', 'waiting-for-1', "p0red'?", 'q9')
+('abpreceiver', 'waiting-for-0', "p1blue'?", 'q5')
+('abpreceiver', 'waiting-for-0', "p1red'?", 'q5')
+time: 0:01:04.892069
+candidate transitions: 260
+iterations: 197
+{'ABPColors1': datetime.timedelta(0, 64, 892069), 'candidate transitions': 260, 'iterations': 197}

@@ -1,0 +1,14 @@
+
+// This is a "manually" designed sender to check if a blocking sender
+// satisfies the requested properties (except ONB).
+
+process sender {
+  inputs [send, a0', a1', timeout]
+  outputs [done, p0, p1]
+  initial s0
+
+  s0 a0'? s0 
+  s0 a1'? s0
+  s0 timeout? s0
+}
+

@@ -1,0 +1,34 @@
+
+// modification of incomplete_receiver.txt to add output-fairness 
+// and also input-enabledness requirement
+
+process receiver {
+  states [r0, r1, r2, r3, r4, r5]
+  input_states [r0, r3]
+  output_states [r1, r2, r4, r5]
+  inputs [p0', p1']
+  input_enabled [p0', p1']
+  outputs [deliver, a0, a1]
+  initial r0
+
+  // r0 is an "input state"
+  r0 p0'? r1
+  // r0 p1'? r5		// incomplete 1
+
+  // r1 is an "output state"
+  r1 deliver! r2 strong_fairness
+
+  // r2 is an "output state"
+  r2 a0! r3 strong_fairness // SF redundant for verif but added for synthesis
+
+  // r3 is an "input state"
+  r3 p1'? r4
+  // r3 p0'? r2		// incomplete 2
+
+  // r4 is an "output state"
+  r4 deliver! r5 strong_fairness
+
+  // r5 is an "output state"
+  r5 a1! r0 strong_fairness // SF redundant for verif but added for synthesis
+}
+

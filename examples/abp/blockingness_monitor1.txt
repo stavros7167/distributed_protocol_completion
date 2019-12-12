@@ -1,0 +1,31 @@
+
+safety blockingness_monitor1 {
+  inputs [send, p0, a0']
+  outputs []
+  initial bm0
+  accepting [error]
+  bm0 send? bm1
+  bm0 p0? bm4
+  bm0 a0'? bm4
+
+  bm1 p0? bm2
+  bm1 send? bm4
+  bm1 a0'? bm4
+
+  bm2 a0'? bm3
+  bm2 send? bm4
+  bm2 p0? bm4
+
+  bm3 a0'? error
+  bm3 send? bm4
+  bm3 p0? bm4
+
+  bm4 send? bm4
+  bm4 p0? bm4
+  bm4 a0'? bm4
+
+  error send? error
+  error p0? error
+  error a0'? error
+}
+

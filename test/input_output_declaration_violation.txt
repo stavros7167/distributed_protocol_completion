@@ -1,0 +1,7 @@
+process e1 {
+  inputs [d]
+  outputs [c]
+  initial q0
+  q0 a? q1
+  q0 b! q2
+}

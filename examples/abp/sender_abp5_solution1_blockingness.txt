@@ -1,0 +1,24 @@
+
+// This is one out of 4 solutions found by synthesizer on abp5.txt:
+
+process sender_abp5_solution1_blockingness {
+  inputs [send, a0', a1', timeout]
+  outputs [p0, p1]
+  initial s0
+  s0 send? s1
+  s1 p0! s2
+  s2 a0'? s3
+  s3 send? s4
+  s4 p1! s5
+  s5 a1'? s0
+  // transitions added by synthesizer:
+  s2 timeout? s1
+  s5 timeout? s4
+  // states and transitions added to check blockingness
+  s3 a0'? s6
+  s6 send? s6
+  s6 timeout? s6
+  s6 a0'? s6
+  s6 a1'? s6
+}
+

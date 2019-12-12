@@ -1,0 +1,52 @@
+
+// This is a modified copy of manual_sender4.txt
+// obtained by removing transitions from the latter
+// and also adding input-enabledness
+
+
+process sender {
+  states [s0, s1, s2, s3, s4, s5, s6, s7]
+  input_states [s0, s2, s4, s6]
+  output_states [s1, s3, s5, s7]
+  inputs [send, a0', a1', timeout]
+  input_enabled [send, a0', a1', timeout]
+  outputs [done, p0, p1]
+  initial s0
+
+  // s0 is an "input state"
+  s0 send? s1		// removed 13
+  // s0 a0'? s0 		// removed 9  don't care transition
+  // s0 a1'? s0			// removed 5
+  // s0 timeout? s0		// removed 4
+
+  // s1 is an "output state"
+  s1 p0! s2 strong_fairness // redundant for verif but added for synthesis
+
+  // s2 is an "input state"
+  // s2 a0'? s3			// removed 14
+  // s2 a1'? s2			// removed 7
+  // s2 timeout? s1		// removed 3
+  // s2 send? s2		// removed 10  don't care transition
+
+  // s3 is an "output state":
+  s3 done! s4 strong_fairness // redundant for verif but added for synthesis
+
+  // s4 is an "input state"
+  s4 send? s5		// removed 15
+  // s4 a0'? s4 		// removed 6
+  // s4 a1'? s4			// removed 11  don't care transition
+  // s4 timeout? s4		// removed 2
+
+  // s5 is an "output state"
+  s5 p1! s6 strong_fairness // redundant for verif but added for synthesis
+
+  // s6 is an "input state"
+  s6 a1'? s7
+  // s6 a0'? s6			// removed 8
+  // s6 timeout? s5		// removed 1
+  // s6 send? s6		// removed 12  don't care transition
+
+  // s7 is an "output state":
+  s7 done! s0 strong_fairness // redundant for verif but added for synthesis
+}
+

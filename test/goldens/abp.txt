@@ -1,0 +1,39 @@
+Parsing file examples/abp.txt
+# automata read: 8
+SOLUTION #1 FOUND:
+** Solution 1 **
+('receiver', 'q0', "p1'?", 'q5')
+('receiver', 'q3', "p0'?", 'q2')
+('sender', 'q2', "a1'?", 'q1')
+('sender', 'q2', 'timeout?', 'q1')
+('sender', 'q5', "a0'?", 'q5')
+('sender', 'q5', 'timeout?', 'q4')
+{'candidate transitions': 84, 'iterations': 42}
+SOLUTION #2 FOUND:
+** Solution 2 **
+('receiver', 'q0', "p1'?", 'q5')
+('receiver', 'q3', "p0'?", 'q2')
+('sender', 'q2', "a1'?", 'q2')
+('sender', 'q2', 'timeout?', 'q1')
+('sender', 'q5', "a0'?", 'q5')
+('sender', 'q5', 'timeout?', 'q4')
+{'candidate transitions': 84, 'iterations': 45}
+SOLUTION #3 FOUND:
+** Solution 3 **
+('receiver', 'q0', "p1'?", 'q5')
+('receiver', 'q3', "p0'?", 'q2')
+('sender', 'q2', "a1'?", 'q1')
+('sender', 'q2', 'timeout?', 'q1')
+('sender', 'q5', "a0'?", 'q4')
+('sender', 'q5', 'timeout?', 'q4')
+{'candidate transitions': 84, 'iterations': 47}
+SOLUTION #4 FOUND:
+** Solution 4 **
+('receiver', 'q0', "p1'?", 'q5')
+('receiver', 'q3', "p0'?", 'q2')
+('sender', 'q2', "a1'?", 'q2')
+('sender', 'q2', 'timeout?', 'q1')
+('sender', 'q5', "a0'?", 'q4')
+('sender', 'q5', 'timeout?', 'q4')
+{'candidate transitions': 84, 'iterations': 48}
+Search finished.

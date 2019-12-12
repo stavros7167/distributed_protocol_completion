@@ -1,0 +1,36 @@
+
+
+// The following accepts executions where a send is not eventually followed
+// by a deliver
+liveness deliver_does_not_follow_send {
+  inputs [send, deliver]
+  outputs []
+  initial q0
+  accepting [q1]
+  q0 send? q0
+  q0 deliver? q0
+  q0 deliver? q1
+  q1 deliver? q1
+  q1 send? q2
+  q2 send? q2
+  q2 deliver? q2
+}
+
+environment client {
+  inputs []
+  outputs [send, deliver]
+  initial q0
+  q0 send! q0
+  // q0 deliver! q0 strong_fairness
+  q0 deliver! q0 
+}
+
+
+environment client2 {
+  inputs [send, deliver]
+  outputs []
+  initial q0
+  q0 send? q0
+  q0 deliver? q0
+}
+

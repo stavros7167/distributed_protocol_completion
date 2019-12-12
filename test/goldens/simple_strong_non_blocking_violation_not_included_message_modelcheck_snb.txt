@@ -1,0 +1,6 @@
+Parsing file test/simple_strong_non_blocking_violation_not_included_message.txt
+# automata read: 2
+# of deadlocks: 0
+There are no strong non-blockingness violations.
+There are no safety violations.
+There are no liveness violations

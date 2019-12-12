@@ -1,0 +1,41 @@
+// re-running the synthesis experiments from scratch
+// we now include input-enabledness to the protocol processes
+// we also include output-fairness for the protocol processes
+
+
+// ENVIRONMENT PROCESSES
+
+include "channels.txt"
+
+forward_channel = channel(p0, p1, p0', p1')
+
+backward_channel = channel(a0, a1, a0', a1')
+
+// include "client_sending.txt"
+include "client_sending_input_enabled.txt"
+
+include "client_receiving_without_fairness.txt"
+
+include "timer.txt"
+
+
+// INCOMPLETE PROCESSES FOR SYNTHESIS
+
+include "incomplete_sender_with_fairness_and_inputenabledness_removed10.txt"
+
+include "incomplete_receiver_with_fairness_and_inputenabledness.txt"
+
+// PROPERTIES
+
+include "safety_monitor.txt"
+
+include "safety_monitor2.txt"
+
+include "liveness1.txt"  // [](send -> <> deliver)
+
+include "liveness3.txt"  // [](send -> <> done)
+
+// include "infinitely_often_send_input_complete.txt"
+
+// strong_non_blocking [send, deliver, done, timeout, p0, p1, a0, a1, p0', p1', a0', a1']
+

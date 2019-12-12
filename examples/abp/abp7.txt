@@ -1,0 +1,17 @@
+// include "liveness1.txt"
+
+include "channels.txt"
+
+forward_channel = channel(p0, p1, p0', p1')
+
+backward_channel = channel(a0, a1, a0', a1')
+
+// include "safety_monitor.txt"
+
+include "client.txt"
+
+include "receiver_abp5_solution1.txt"
+include "sender_abp5_solution1_blockingness.txt"
+
+include "blockingness_monitor1.txt"
+

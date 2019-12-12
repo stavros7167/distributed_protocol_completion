@@ -1,0 +1,8 @@
+Parsing file test/input_enabled_synthesis.txt
+# automata read: 2
+SOLUTION #1 FOUND:
+** Solution 1 **
+('P', 'p0', 'a?', 'p0')
+('P', 'p0', 'b?', 'p0')
+{'candidate transitions': 2, 'iterations': 1}
+Search finished.

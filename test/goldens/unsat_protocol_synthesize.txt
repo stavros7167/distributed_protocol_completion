@@ -1,0 +1,3 @@
+Parsing file test/unsat_protocol.txt
+# automata read: 2
+No solutions could be found.

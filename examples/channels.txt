@@ -1,0 +1,22 @@
+environment channel(in1, in2, out1, out2) {
+  inputs [in1, in2]
+  outputs [out1, out2]
+  initial q0
+  // receive
+  q0 in1? q1 strong_fairness
+  q0 in2? q2 strong_fairness
+  // deliver
+  q1 out1! q0 strong_fairness
+  q2 out2! q0 strong_fairness
+  // loss
+  q0 in1? q0
+  q0 in2? q0
+  // overflow
+  q1 in1? q1
+  q1 in2? q1
+  q2 in1? q2
+  q2 in2? q2
+  // duplicate
+  q1 out1! q1
+  q2 out2! q2
+}

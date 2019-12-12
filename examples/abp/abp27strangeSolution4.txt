@@ -1,0 +1,80 @@
+
+// See readme.txt for how this solution has been generated.
+// Transitions marked "dead" below have been reported dead by
+// python ../../tool.py printdeadtransitions abp27strangeSolution4.txt
+
+// ENVIRONMENT PROCESSES
+
+include "channels.txt"
+
+forward_channel = channel(p0, p1, p0', p1')
+
+backward_channel = channel(a0, a1, a0', a1')
+
+include "client_sending_input_enabled.txt"
+
+include "client_receiving_without_fairness.txt"
+
+include "timer.txt"
+
+
+// SOLUTION
+
+process sender {
+  inputs [send, a0', a1', timeout]
+  outputs [p0, done, p1]
+  initial s0
+  s0 a1'? s0
+  // s0 a0'? s0 // dead transition
+  s0 timeout? s0
+  s0 send? s1
+  s1 p0! s2 strong_fairness
+  s2 a1'? s4
+  s2 timeout? s1
+  // s2 send? s2 // dead transition
+  s2 a0'? s5
+  // s3 done! s4 strong_fairness // dead transition
+  s4 a1'? s4
+  s4 a0'? s2
+  s4 timeout? s1
+  // s4 send? s5 // dead transition
+  s5 p1! s6 strong_fairness
+  s6 a1'? s7
+  s6 a0'? s5
+  s6 timeout? s5
+  // s6 send? s6 // dead transition
+  s7 done! s0 strong_fairness
+}
+
+process receiver {
+  inputs [p0', p1']
+  outputs [a0, deliver, a1]
+  initial r0
+  r0 p0'? r1
+  r0 p1'? r5
+  r1 a1! r3
+  r2 a0! r3 strong_fairness
+  r3 p0'? r2
+  r3 p1'? r4
+  r4 deliver! r5 strong_fairness
+  r5 a1! r0 strong_fairness
+}
+
+
+
+// PROPERTIES
+
+include "safety_monitor.txt"
+
+include "safety_monitor2.txt"
+
+include "liveness1.txt"  // [](send -> <> deliver)
+
+include "liveness3.txt"  // [](send -> <> done)
+
+// in order to satisfy the property below, you have to enable strong fairness
+// on the Sending Client: client_sending_input_enabled.txt
+include "infinitely_often_send_input_complete.txt"
+
+strong_non_blocking [send, deliver, done, timeout, p0, p1, a0, a1, p0', p1', a0', a1']
+

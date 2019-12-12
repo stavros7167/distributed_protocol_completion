@@ -1,0 +1,12 @@
+ABP1
+SOLUTION FOUND:
+('abpsender', 'q2', "a1'?", 'q1')
+('abpsender', 'q2', 'timeout?', 'q1')
+('abpsender', 'q5', "a0'?", 'q5')
+('abpsender', 'q5', 'timeout?', 'q4')
+('abpreceiver', 'waiting-for-1', "p0'?", 'q2')
+('abpreceiver', 'waiting-for-0', "p1'?", 'q5')
+time: 0:00:02.246673
+candidate transitions: 84
+iterations: 44
+{'ABP1': datetime.timedelta(0, 2, 246673), 'candidate transitions': 84, 'iterations': 44}

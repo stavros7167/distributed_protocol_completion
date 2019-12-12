@@ -1,0 +1,9 @@
+
+environment SendingClient {
+  inputs [done]
+  outputs [send]
+  initial sc0
+  sc0 send! sc1 strong_fairness
+  sc1 done? sc0 
+}
+

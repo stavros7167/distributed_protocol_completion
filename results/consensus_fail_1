@@ -1,0 +1,10 @@
+consensus_fail
+SOLUTION FOUND:
+('p1', 'q2', 'p1_test_and_set_0?', 'q4')
+('p2', 'q2', 'p2_test_and_set_0?', 'q4')
+('p1', 'q7', 'p2_read_1?', 'q3')
+('p2', 'q7', 'p1_read_1?', 'q3')
+time: 0:00:00.259082
+candidate transitions: 264
+iterations: 5
+{'candidate transitions': 264, 'iterations': 5, 'consensus_fail': datetime.timedelta(0, 0, 259082)}

@@ -1,0 +1,33 @@
+
+// ENVIRONMENT PROCESSES
+
+include "channels.txt"
+
+forward_channel = channel(p0, p1, p0', p1')
+
+backward_channel = channel(a0, a1, a0', a1')
+
+include "client_sending.txt"
+
+include "client_receiving.txt"
+
+include "timer.txt"
+
+
+// INCOMPLETE PROCESSES FOR SYNTHESIS
+
+include "incomplete_sender7.txt"
+
+include "incomplete_receiver.txt"
+
+
+// PROPERTIES
+
+include "safety_monitor.txt"
+
+include "liveness1.txt"
+
+include "infinitely_often_send_input_complete.txt"
+
+strong_non_blocking [send, deliver, done, timeout, p0, p1, a0, a1, p0', p1', a0', a1']
+

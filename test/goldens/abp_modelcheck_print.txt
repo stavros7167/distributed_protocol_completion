@@ -1,0 +1,561 @@
+Parsing file examples/abp.txt
+# automata read: 8
+# of deadlocks: 16
+
+Trace to q3,q2,q0,q2,q1 (note no monitor automata are included)
+receiver,sender,client,backward_channel,forward_channel
+q0,q0,q0,q0,q0
+('client', 'q0', 'send!', 'q0')
+('sender', 'q0', 'send?', 'q1')
+q0,q1,q0,q0,q0
+('sender', 'q1', 'p0!', 'q2')
+('forward_channel', 'q0', 'p0?', 'q1')
+q0,q2,q0,q0,q1
+('forward_channel', 'q1', "p0'!", 'q0')
+('receiver', 'q0', "p0'?", 'q1')
+q1,q2,q0,q0,q0
+('receiver', 'q1', 'deliver!', 'q2')
+('client', 'q0', 'deliver?', 'q0')
+q2,q2,q0,q0,q0
+('receiver', 'q2', 'a0!', 'q3')
+('backward_channel', 'q0', 'a0?', 'q1')
+q3,q2,q0,q1,q0
+('backward_channel', 'q1', "a0'!", 'q0')
+('sender', 'q2', "a0'?", 'q3')
+q3,q3,q0,q0,q0
+('client', 'q0', 'send!', 'q0')
+('sender', 'q3', 'send?', 'q4')
+q3,q4,q0,q0,q0
+('sender', 'q4', 'p1!', 'q5')
+('forward_channel', 'q0', 'p1?', 'q2')
+q3,q5,q0,q0,q2
+('forward_channel', 'q2', "p1'!", 'q0')
+('receiver', 'q3', "p1'?", 'q4')
+q4,q5,q0,q0,q0
+('receiver', 'q4', 'deliver!', 'q5')
+('client', 'q0', 'deliver?', 'q0')
+q5,q5,q0,q0,q0
+('receiver', 'q5', 'a1!', 'q0')
+('backward_channel', 'q0', 'a1?', 'q2')
+q0,q5,q0,q2,q0
+('backward_channel', 'q2', "a1'!", 'q2')
+('sender', 'q5', "a1'?", 'q0')
+q0,q0,q0,q2,q0
+('client', 'q0', 'send!', 'q0')
+('sender', 'q0', 'send?', 'q1')
+q0,q1,q0,q2,q0
+('sender', 'q1', 'p0!', 'q2')
+('forward_channel', 'q0', 'p0?', 'q1')
+q0,q2,q0,q2,q1
+('forward_channel', 'q1', "p0'!", 'q1')
+('receiver', 'q0', "p0'?", 'q1')
+q1,q2,q0,q2,q1
+('receiver', 'q1', 'deliver!', 'q2')
+('client', 'q0', 'deliver?', 'q0')
+q2,q2,q0,q2,q1
+('receiver', 'q2', 'a0!', 'q3')
+('backward_channel', 'q2', 'a0?', 'q2')
+q3,q2,q0,q2,q1
+
+Trace to q3,q2,q0,q0,q0 (note no monitor automata are included)
+receiver,sender,client,backward_channel,forward_channel
+q0,q0,q0,q0,q0
+('client', 'q0', 'send!', 'q0')
+('sender', 'q0', 'send?', 'q1')
+q0,q1,q0,q0,q0
+('sender', 'q1', 'p0!', 'q2')
+('forward_channel', 'q0', 'p0?', 'q1')
+q0,q2,q0,q0,q1
+('forward_channel', 'q1', "p0'!", 'q0')
+('receiver', 'q0', "p0'?", 'q1')
+q1,q2,q0,q0,q0
+('receiver', 'q1', 'deliver!', 'q2')
+('client', 'q0', 'deliver?', 'q0')
+q2,q2,q0,q0,q0
+('receiver', 'q2', 'a0!', 'q3')
+('backward_channel', 'q0', 'a0?', 'q0')
+q3,q2,q0,q0,q0
+
+Trace to q0,q5,q0,q0,q2 (note no monitor automata are included)
+receiver,sender,client,backward_channel,forward_channel
+q0,q0,q0,q0,q0
+('client', 'q0', 'send!', 'q0')
+('sender', 'q0', 'send?', 'q1')
+q0,q1,q0,q0,q0
+('sender', 'q1', 'p0!', 'q2')
+('forward_channel', 'q0', 'p0?', 'q1')
+q0,q2,q0,q0,q1
+('forward_channel', 'q1', "p0'!", 'q0')
+('receiver', 'q0', "p0'?", 'q1')
+q1,q2,q0,q0,q0
+('receiver', 'q1', 'deliver!', 'q2')
+('client', 'q0', 'deliver?', 'q0')
+q2,q2,q0,q0,q0
+('receiver', 'q2', 'a0!', 'q3')
+('backward_channel', 'q0', 'a0?', 'q1')
+q3,q2,q0,q1,q0
+('backward_channel', 'q1', "a0'!", 'q0')
+('sender', 'q2', "a0'?", 'q3')
+q3,q3,q0,q0,q0
+('client', 'q0', 'send!', 'q0')
+('sender', 'q3', 'send?', 'q4')
+q3,q4,q0,q0,q0
+('sender', 'q4', 'p1!', 'q5')
+('forward_channel', 'q0', 'p1?', 'q2')
+q3,q5,q0,q0,q2
+('forward_channel', 'q2', "p1'!", 'q2')
+('receiver', 'q3', "p1'?", 'q4')
+q4,q5,q0,q0,q2
+('receiver', 'q4', 'deliver!', 'q5')
+('client', 'q0', 'deliver?', 'q0')
+q5,q5,q0,q0,q2
+('receiver', 'q5', 'a1!', 'q0')
+('backward_channel', 'q0', 'a1?', 'q0')
+q0,q5,q0,q0,q2
+
+Trace to q0,q5,q0,q0,q0 (note no monitor automata are included)
+receiver,sender,client,backward_channel,forward_channel
+q0,q0,q0,q0,q0
+('client', 'q0', 'send!', 'q0')
+('sender', 'q0', 'send?', 'q1')
+q0,q1,q0,q0,q0
+('sender', 'q1', 'p0!', 'q2')
+('forward_channel', 'q0', 'p0?', 'q1')
+q0,q2,q0,q0,q1
+('forward_channel', 'q1', "p0'!", 'q0')
+('receiver', 'q0', "p0'?", 'q1')
+q1,q2,q0,q0,q0
+('receiver', 'q1', 'deliver!', 'q2')
+('client', 'q0', 'deliver?', 'q0')
+q2,q2,q0,q0,q0
+('receiver', 'q2', 'a0!', 'q3')
+('backward_channel', 'q0', 'a0?', 'q1')
+q3,q2,q0,q1,q0
+('backward_channel', 'q1', "a0'!", 'q0')
+('sender', 'q2', "a0'?", 'q3')
+q3,q3,q0,q0,q0
+('client', 'q0', 'send!', 'q0')
+('sender', 'q3', 'send?', 'q4')
+q3,q4,q0,q0,q0
+('sender', 'q4', 'p1!', 'q5')
+('forward_channel', 'q0', 'p1?', 'q2')
+q3,q5,q0,q0,q2
+('forward_channel', 'q2', "p1'!", 'q0')
+('receiver', 'q3', "p1'?", 'q4')
+q4,q5,q0,q0,q0
+('receiver', 'q4', 'deliver!', 'q5')
+('client', 'q0', 'deliver?', 'q0')
+q5,q5,q0,q0,q0
+('receiver', 'q5', 'a1!', 'q0')
+('backward_channel', 'q0', 'a1?', 'q0')
+q0,q5,q0,q0,q0
+
+Trace to q3,q2,q0,q0,q1 (note no monitor automata are included)
+receiver,sender,client,backward_channel,forward_channel
+q0,q0,q0,q0,q0
+('client', 'q0', 'send!', 'q0')
+('sender', 'q0', 'send?', 'q1')
+q0,q1,q0,q0,q0
+('sender', 'q1', 'p0!', 'q2')
+('forward_channel', 'q0', 'p0?', 'q1')
+q0,q2,q0,q0,q1
+('forward_channel', 'q1', "p0'!", 'q1')
+('receiver', 'q0', "p0'?", 'q1')
+q1,q2,q0,q0,q1
+('receiver', 'q1', 'deliver!', 'q2')
+('client', 'q0', 'deliver?', 'q0')
+q2,q2,q0,q0,q1
+('receiver', 'q2', 'a0!', 'q3')
+('backward_channel', 'q0', 'a0?', 'q0')
+q3,q2,q0,q0,q1
+
+Trace to q0,q2,q0,q2,q0 (note no monitor automata are included)
+receiver,sender,client,backward_channel,forward_channel
+q0,q0,q0,q0,q0
+('client', 'q0', 'send!', 'q0')
+('sender', 'q0', 'send?', 'q1')
+q0,q1,q0,q0,q0
+('sender', 'q1', 'p0!', 'q2')
+('forward_channel', 'q0', 'p0?', 'q1')
+q0,q2,q0,q0,q1
+('forward_channel', 'q1', "p0'!", 'q0')
+('receiver', 'q0', "p0'?", 'q1')
+q1,q2,q0,q0,q0
+('receiver', 'q1', 'deliver!', 'q2')
+('client', 'q0', 'deliver?', 'q0')
+q2,q2,q0,q0,q0
+('receiver', 'q2', 'a0!', 'q3')
+('backward_channel', 'q0', 'a0?', 'q1')
+q3,q2,q0,q1,q0
+('backward_channel', 'q1', "a0'!", 'q0')
+('sender', 'q2', "a0'?", 'q3')
+q3,q3,q0,q0,q0
+('client', 'q0', 'send!', 'q0')
+('sender', 'q3', 'send?', 'q4')
+q3,q4,q0,q0,q0
+('sender', 'q4', 'p1!', 'q5')
+('forward_channel', 'q0', 'p1?', 'q2')
+q3,q5,q0,q0,q2
+('forward_channel', 'q2', "p1'!", 'q0')
+('receiver', 'q3', "p1'?", 'q4')
+q4,q5,q0,q0,q0
+('receiver', 'q4', 'deliver!', 'q5')
+('client', 'q0', 'deliver?', 'q0')
+q5,q5,q0,q0,q0
+('receiver', 'q5', 'a1!', 'q0')
+('backward_channel', 'q0', 'a1?', 'q2')
+q0,q5,q0,q2,q0
+('backward_channel', 'q2', "a1'!", 'q2')
+('sender', 'q5', "a1'?", 'q0')
+q0,q0,q0,q2,q0
+('client', 'q0', 'send!', 'q0')
+('sender', 'q0', 'send?', 'q1')
+q0,q1,q0,q2,q0
+('sender', 'q1', 'p0!', 'q2')
+('forward_channel', 'q0', 'p0?', 'q0')
+q0,q2,q0,q2,q0
+
+Trace to q0,q2,q0,q2,q2 (note no monitor automata are included)
+receiver,sender,client,backward_channel,forward_channel
+q0,q0,q0,q0,q0
+('client', 'q0', 'send!', 'q0')
+('sender', 'q0', 'send?', 'q1')
+q0,q1,q0,q0,q0
+('sender', 'q1', 'p0!', 'q2')
+('forward_channel', 'q0', 'p0?', 'q1')
+q0,q2,q0,q0,q1
+('forward_channel', 'q1', "p0'!", 'q0')
+('receiver', 'q0', "p0'?", 'q1')
+q1,q2,q0,q0,q0
+('receiver', 'q1', 'deliver!', 'q2')
+('client', 'q0', 'deliver?', 'q0')
+q2,q2,q0,q0,q0
+('receiver', 'q2', 'a0!', 'q3')
+('backward_channel', 'q0', 'a0?', 'q1')
+q3,q2,q0,q1,q0
+('backward_channel', 'q1', "a0'!", 'q0')
+('sender', 'q2', "a0'?", 'q3')
+q3,q3,q0,q0,q0
+('client', 'q0', 'send!', 'q0')
+('sender', 'q3', 'send?', 'q4')
+q3,q4,q0,q0,q0
+('sender', 'q4', 'p1!', 'q5')
+('forward_channel', 'q0', 'p1?', 'q2')
+q3,q5,q0,q0,q2
+('forward_channel', 'q2', "p1'!", 'q2')
+('receiver', 'q3', "p1'?", 'q4')
+q4,q5,q0,q0,q2
+('receiver', 'q4', 'deliver!', 'q5')
+('client', 'q0', 'deliver?', 'q0')
+q5,q5,q0,q0,q2
+('receiver', 'q5', 'a1!', 'q0')
+('backward_channel', 'q0', 'a1?', 'q2')
+q0,q5,q0,q2,q2
+('backward_channel', 'q2', "a1'!", 'q2')
+('sender', 'q5', "a1'?", 'q0')
+q0,q0,q0,q2,q2
+('client', 'q0', 'send!', 'q0')
+('sender', 'q0', 'send?', 'q1')
+q0,q1,q0,q2,q2
+('sender', 'q1', 'p0!', 'q2')
+('forward_channel', 'q2', 'p0?', 'q2')
+q0,q2,q0,q2,q2
+
+Trace to q3,q5,q0,q0,q1 (note no monitor automata are included)
+receiver,sender,client,backward_channel,forward_channel
+q0,q0,q0,q0,q0
+('client', 'q0', 'send!', 'q0')
+('sender', 'q0', 'send?', 'q1')
+q0,q1,q0,q0,q0
+('sender', 'q1', 'p0!', 'q2')
+('forward_channel', 'q0', 'p0?', 'q1')
+q0,q2,q0,q0,q1
+('forward_channel', 'q1', "p0'!", 'q1')
+('receiver', 'q0', "p0'?", 'q1')
+q1,q2,q0,q0,q1
+('receiver', 'q1', 'deliver!', 'q2')
+('client', 'q0', 'deliver?', 'q0')
+q2,q2,q0,q0,q1
+('receiver', 'q2', 'a0!', 'q3')
+('backward_channel', 'q0', 'a0?', 'q1')
+q3,q2,q0,q1,q1
+('backward_channel', 'q1', "a0'!", 'q0')
+('sender', 'q2', "a0'?", 'q3')
+q3,q3,q0,q0,q1
+('client', 'q0', 'send!', 'q0')
+('sender', 'q3', 'send?', 'q4')
+q3,q4,q0,q0,q1
+('sender', 'q4', 'p1!', 'q5')
+('forward_channel', 'q1', 'p1?', 'q1')
+q3,q5,q0,q0,q1
+
+Trace to q3,q5,q0,q0,q0 (note no monitor automata are included)
+receiver,sender,client,backward_channel,forward_channel
+q0,q0,q0,q0,q0
+('client', 'q0', 'send!', 'q0')
+('sender', 'q0', 'send?', 'q1')
+q0,q1,q0,q0,q0
+('sender', 'q1', 'p0!', 'q2')
+('forward_channel', 'q0', 'p0?', 'q1')
+q0,q2,q0,q0,q1
+('forward_channel', 'q1', "p0'!", 'q0')
+('receiver', 'q0', "p0'?", 'q1')
+q1,q2,q0,q0,q0
+('receiver', 'q1', 'deliver!', 'q2')
+('client', 'q0', 'deliver?', 'q0')
+q2,q2,q0,q0,q0
+('receiver', 'q2', 'a0!', 'q3')
+('backward_channel', 'q0', 'a0?', 'q1')
+q3,q2,q0,q1,q0
+('backward_channel', 'q1', "a0'!", 'q0')
+('sender', 'q2', "a0'?", 'q3')
+q3,q3,q0,q0,q0
+('client', 'q0', 'send!', 'q0')
+('sender', 'q3', 'send?', 'q4')
+q3,q4,q0,q0,q0
+('sender', 'q4', 'p1!', 'q5')
+('forward_channel', 'q0', 'p1?', 'q0')
+q3,q5,q0,q0,q0
+
+Trace to q3,q5,q0,q1,q0 (note no monitor automata are included)
+receiver,sender,client,backward_channel,forward_channel
+q0,q0,q0,q0,q0
+('client', 'q0', 'send!', 'q0')
+('sender', 'q0', 'send?', 'q1')
+q0,q1,q0,q0,q0
+('sender', 'q1', 'p0!', 'q2')
+('forward_channel', 'q0', 'p0?', 'q1')
+q0,q2,q0,q0,q1
+('forward_channel', 'q1', "p0'!", 'q0')
+('receiver', 'q0', "p0'?", 'q1')
+q1,q2,q0,q0,q0
+('receiver', 'q1', 'deliver!', 'q2')
+('client', 'q0', 'deliver?', 'q0')
+q2,q2,q0,q0,q0
+('receiver', 'q2', 'a0!', 'q3')
+('backward_channel', 'q0', 'a0?', 'q1')
+q3,q2,q0,q1,q0
+('backward_channel', 'q1', "a0'!", 'q1')
+('sender', 'q2', "a0'?", 'q3')
+q3,q3,q0,q1,q0
+('client', 'q0', 'send!', 'q0')
+('sender', 'q3', 'send?', 'q4')
+q3,q4,q0,q1,q0
+('sender', 'q4', 'p1!', 'q5')
+('forward_channel', 'q0', 'p1?', 'q0')
+q3,q5,q0,q1,q0
+
+Trace to q3,q5,q0,q1,q1 (note no monitor automata are included)
+receiver,sender,client,backward_channel,forward_channel
+q0,q0,q0,q0,q0
+('client', 'q0', 'send!', 'q0')
+('sender', 'q0', 'send?', 'q1')
+q0,q1,q0,q0,q0
+('sender', 'q1', 'p0!', 'q2')
+('forward_channel', 'q0', 'p0?', 'q1')
+q0,q2,q0,q0,q1
+('forward_channel', 'q1', "p0'!", 'q1')
+('receiver', 'q0', "p0'?", 'q1')
+q1,q2,q0,q0,q1
+('receiver', 'q1', 'deliver!', 'q2')
+('client', 'q0', 'deliver?', 'q0')
+q2,q2,q0,q0,q1
+('receiver', 'q2', 'a0!', 'q3')
+('backward_channel', 'q0', 'a0?', 'q1')
+q3,q2,q0,q1,q1
+('backward_channel', 'q1', "a0'!", 'q1')
+('sender', 'q2', "a0'?", 'q3')
+q3,q3,q0,q1,q1
+('client', 'q0', 'send!', 'q0')
+('sender', 'q3', 'send?', 'q4')
+q3,q4,q0,q1,q1
+('sender', 'q4', 'p1!', 'q5')
+('forward_channel', 'q1', 'p1?', 'q1')
+q3,q5,q0,q1,q1
+
+Trace to q0,q2,q0,q0,q0 (note no monitor automata are included)
+receiver,sender,client,backward_channel,forward_channel
+q0,q0,q0,q0,q0
+('client', 'q0', 'send!', 'q0')
+('sender', 'q0', 'send?', 'q1')
+q0,q1,q0,q0,q0
+('sender', 'q1', 'p0!', 'q2')
+('forward_channel', 'q0', 'p0?', 'q0')
+q0,q2,q0,q0,q0
+
+Trace to q3,q2,q0,q2,q0 (note no monitor automata are included)
+receiver,sender,client,backward_channel,forward_channel
+q0,q0,q0,q0,q0
+('client', 'q0', 'send!', 'q0')
+('sender', 'q0', 'send?', 'q1')
+q0,q1,q0,q0,q0
+('sender', 'q1', 'p0!', 'q2')
+('forward_channel', 'q0', 'p0?', 'q1')
+q0,q2,q0,q0,q1
+('forward_channel', 'q1', "p0'!", 'q0')
+('receiver', 'q0', "p0'?", 'q1')
+q1,q2,q0,q0,q0
+('receiver', 'q1', 'deliver!', 'q2')
+('client', 'q0', 'deliver?', 'q0')
+q2,q2,q0,q0,q0
+('receiver', 'q2', 'a0!', 'q3')
+('backward_channel', 'q0', 'a0?', 'q1')
+q3,q2,q0,q1,q0
+('backward_channel', 'q1', "a0'!", 'q0')
+('sender', 'q2', "a0'?", 'q3')
+q3,q3,q0,q0,q0
+('client', 'q0', 'send!', 'q0')
+('sender', 'q3', 'send?', 'q4')
+q3,q4,q0,q0,q0
+('sender', 'q4', 'p1!', 'q5')
+('forward_channel', 'q0', 'p1?', 'q2')
+q3,q5,q0,q0,q2
+('forward_channel', 'q2', "p1'!", 'q0')
+('receiver', 'q3', "p1'?", 'q4')
+q4,q5,q0,q0,q0
+('receiver', 'q4', 'deliver!', 'q5')
+('client', 'q0', 'deliver?', 'q0')
+q5,q5,q0,q0,q0
+('receiver', 'q5', 'a1!', 'q0')
+('backward_channel', 'q0', 'a1?', 'q2')
+q0,q5,q0,q2,q0
+('backward_channel', 'q2', "a1'!", 'q2')
+('sender', 'q5', "a1'?", 'q0')
+q0,q0,q0,q2,q0
+('client', 'q0', 'send!', 'q0')
+('sender', 'q0', 'send?', 'q1')
+q0,q1,q0,q2,q0
+('sender', 'q1', 'p0!', 'q2')
+('forward_channel', 'q0', 'p0?', 'q1')
+q0,q2,q0,q2,q1
+('forward_channel', 'q1', "p0'!", 'q0')
+('receiver', 'q0', "p0'?", 'q1')
+q1,q2,q0,q2,q0
+('receiver', 'q1', 'deliver!', 'q2')
+('client', 'q0', 'deliver?', 'q0')
+q2,q2,q0,q2,q0
+('receiver', 'q2', 'a0!', 'q3')
+('backward_channel', 'q2', 'a0?', 'q2')
+q3,q2,q0,q2,q0
+
+Trace to q0,q5,q0,q1,q0 (note no monitor automata are included)
+receiver,sender,client,backward_channel,forward_channel
+q0,q0,q0,q0,q0
+('client', 'q0', 'send!', 'q0')
+('sender', 'q0', 'send?', 'q1')
+q0,q1,q0,q0,q0
+('sender', 'q1', 'p0!', 'q2')
+('forward_channel', 'q0', 'p0?', 'q1')
+q0,q2,q0,q0,q1
+('forward_channel', 'q1', "p0'!", 'q0')
+('receiver', 'q0', "p0'?", 'q1')
+q1,q2,q0,q0,q0
+('receiver', 'q1', 'deliver!', 'q2')
+('client', 'q0', 'deliver?', 'q0')
+q2,q2,q0,q0,q0
+('receiver', 'q2', 'a0!', 'q3')
+('backward_channel', 'q0', 'a0?', 'q1')
+q3,q2,q0,q1,q0
+('backward_channel', 'q1', "a0'!", 'q1')
+('sender', 'q2', "a0'?", 'q3')
+q3,q3,q0,q1,q0
+('client', 'q0', 'send!', 'q0')
+('sender', 'q3', 'send?', 'q4')
+q3,q4,q0,q1,q0
+('sender', 'q4', 'p1!', 'q5')
+('forward_channel', 'q0', 'p1?', 'q2')
+q3,q5,q0,q1,q2
+('forward_channel', 'q2', "p1'!", 'q0')
+('receiver', 'q3', "p1'?", 'q4')
+q4,q5,q0,q1,q0
+('receiver', 'q4', 'deliver!', 'q5')
+('client', 'q0', 'deliver?', 'q0')
+q5,q5,q0,q1,q0
+('receiver', 'q5', 'a1!', 'q0')
+('backward_channel', 'q1', 'a1?', 'q1')
+q0,q5,q0,q1,q0
+
+Trace to q0,q5,q0,q1,q2 (note no monitor automata are included)
+receiver,sender,client,backward_channel,forward_channel
+q0,q0,q0,q0,q0
+('client', 'q0', 'send!', 'q0')
+('sender', 'q0', 'send?', 'q1')
+q0,q1,q0,q0,q0
+('sender', 'q1', 'p0!', 'q2')
+('forward_channel', 'q0', 'p0?', 'q1')
+q0,q2,q0,q0,q1
+('forward_channel', 'q1', "p0'!", 'q0')
+('receiver', 'q0', "p0'?", 'q1')
+q1,q2,q0,q0,q0
+('receiver', 'q1', 'deliver!', 'q2')
+('client', 'q0', 'deliver?', 'q0')
+q2,q2,q0,q0,q0
+('receiver', 'q2', 'a0!', 'q3')
+('backward_channel', 'q0', 'a0?', 'q1')
+q3,q2,q0,q1,q0
+('backward_channel', 'q1', "a0'!", 'q1')
+('sender', 'q2', "a0'?", 'q3')
+q3,q3,q0,q1,q0
+('client', 'q0', 'send!', 'q0')
+('sender', 'q3', 'send?', 'q4')
+q3,q4,q0,q1,q0
+('sender', 'q4', 'p1!', 'q5')
+('forward_channel', 'q0', 'p1?', 'q2')
+q3,q5,q0,q1,q2
+('forward_channel', 'q2', "p1'!", 'q2')
+('receiver', 'q3', "p1'?", 'q4')
+q4,q5,q0,q1,q2
+('receiver', 'q4', 'deliver!', 'q5')
+('client', 'q0', 'deliver?', 'q0')
+q5,q5,q0,q1,q2
+('receiver', 'q5', 'a1!', 'q0')
+('backward_channel', 'q1', 'a1?', 'q1')
+q0,q5,q0,q1,q2
+
+Trace to q0,q2,q0,q0,q2 (note no monitor automata are included)
+receiver,sender,client,backward_channel,forward_channel
+q0,q0,q0,q0,q0
+('client', 'q0', 'send!', 'q0')
+('sender', 'q0', 'send?', 'q1')
+q0,q1,q0,q0,q0
+('sender', 'q1', 'p0!', 'q2')
+('forward_channel', 'q0', 'p0?', 'q1')
+q0,q2,q0,q0,q1
+('forward_channel', 'q1', "p0'!", 'q0')
+('receiver', 'q0', "p0'?", 'q1')
+q1,q2,q0,q0,q0
+('receiver', 'q1', 'deliver!', 'q2')
+('client', 'q0', 'deliver?', 'q0')
+q2,q2,q0,q0,q0
+('receiver', 'q2', 'a0!', 'q3')
+('backward_channel', 'q0', 'a0?', 'q1')
+q3,q2,q0,q1,q0
+('backward_channel', 'q1', "a0'!", 'q0')
+('sender', 'q2', "a0'?", 'q3')
+q3,q3,q0,q0,q0
+('client', 'q0', 'send!', 'q0')
+('sender', 'q3', 'send?', 'q4')
+q3,q4,q0,q0,q0
+('sender', 'q4', 'p1!', 'q5')
+('forward_channel', 'q0', 'p1?', 'q2')
+q3,q5,q0,q0,q2
+('forward_channel', 'q2', "p1'!", 'q2')
+('receiver', 'q3', "p1'?", 'q4')
+q4,q5,q0,q0,q2
+('receiver', 'q4', 'deliver!', 'q5')
+('client', 'q0', 'deliver?', 'q0')
+q5,q5,q0,q0,q2
+('receiver', 'q5', 'a1!', 'q0')
+('backward_channel', 'q0', 'a1?', 'q2')
+q0,q5,q0,q2,q2
+('backward_channel', 'q2', "a1'!", 'q0')
+('sender', 'q5', "a1'?", 'q0')
+q0,q0,q0,q0,q2
+('client', 'q0', 'send!', 'q0')
+('sender', 'q0', 'send?', 'q1')
+q0,q1,q0,q0,q2
+('sender', 'q1', 'p0!', 'q2')
+('forward_channel', 'q2', 'p0?', 'q2')
+q0,q2,q0,q0,q2
+There are no safety violations.
+There are no liveness violations

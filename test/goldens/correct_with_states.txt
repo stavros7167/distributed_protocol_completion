@@ -1,0 +1,6 @@
+Parsing file test/correct_with_states.txt
+# automata read: 2
+P
+[('p0', 'b?', 'p0')]
+E
+[('e2', 'a!', 'e1'), ('e2', 'b!', 'e1'), ('e2', 'a!', 'e0'), ('e2', 'b!', 'e0'), ('e2', 'a!', 'e2'), ('e2', 'b!', 'e2')]

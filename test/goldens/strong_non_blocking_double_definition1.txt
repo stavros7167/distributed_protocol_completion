@@ -1,0 +1,2 @@
+Parsing file test/strong_non_blocking_double_definition1.txt
+Only one strongly non blocking specification is allowed per file 19.
