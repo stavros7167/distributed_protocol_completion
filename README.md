@@ -1,6 +1,9 @@
 # distributed_protocol_completion
 Automated synthesis of distributed protocols from scenarios and requirements using counterexample-guided completion
 
+For an overview, see the paper: "Automatic Synthesis of Distributed Protocols", by Alur and Tripakis, e.g., available here: http://www.ccs.neu.edu/~stavros/papers/sigact2017.pdf
+
+The set of experiments described in that paper can be found under: ./examples/abp/  (see the readme.txt file there).
 
 # Automata specification language
 
